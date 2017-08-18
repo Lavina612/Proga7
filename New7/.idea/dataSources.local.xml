@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="studs@192.168.10.99" uuid="1713255a-c379-4f99-9b9e-bc85b13027dd">
+      <database-info product="PostgreSQL" version="9.6.1" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4.1212">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>s225106</user-name>
+      <introspection-schemas>studs:s225106</introspection-schemas>
+      <ssh-properties>
+        <enabled>true</enabled>
+        <proxy-host>helios.se.ifmo.ru</proxy-host>
+        <proxy-port>2222</proxy-port>
+        <user>s225106</user>
+        <use-password>true</use-password>
+      </ssh-properties>
+    </data-source>
+    <data-source name="studs@192.168.10.99 [2]" uuid="3abdfd72-ac4d-46f5-8417-30efd7937b70">
+      <database-info product="PostgreSQL" version="9.6.1" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4.1212">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>s225095</user-name>
+      <introspection-schemas>studs:s225095</introspection-schemas>
+      <ssh-properties>
+        <enabled>true</enabled>
+        <proxy-host>helios.se.ifmo.ru</proxy-host>
+        <proxy-port>2222</proxy-port>
+        <user>s225095</user>
+        <use-password>true</use-password>
+      </ssh-properties>
+    </data-source>
+  </component>
+</project>

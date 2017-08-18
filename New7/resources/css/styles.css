@@ -1,0 +1,18 @@
+.exit:hover {
+	-fx-background-color: orange;
+}
+.exit:foused {
+	-fx-background-color: green;
+}
+.chb1:selected {
+	-fx-background-color: brown;
+}
+.exit:pressed {
+	-fx-background-color: pink;
+}
+.exit {
+	-fx-text-fill: red;
+}
+#1 {
+	-fx-text-fill: yellow;
+}
