@@ -1,9 +1,10 @@
 /**
  * Created by Elizabeth on 20.11.2016.
  */
+import java.io.Serializable;
 import java.util.*;
 
-public class Person implements Comparable <Person> {
+public class Person implements Comparable <Person>, Serializable {
     private String name;
     private ArrayList<Phrase> phrases;
 
