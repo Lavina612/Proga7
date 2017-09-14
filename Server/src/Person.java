@@ -7,11 +7,11 @@ import java.util.*;
 public class Person implements Comparable <Person>, Serializable {
     private String name;
     private int id;
-    private ArrayList<Phrase> phrases;
     public static final long serialVersionUID = 10L;
+    private ArrayList<Phrase> phrases;
 
     public int compareTo(Person person1) {
-        return this.name.length() == person1.name.length() ? this.name.compareTo(person1.name) : this.name.length()-person1.name.length();
+       return this.name.length() == person1.name.length() ? this.name.compareTo(person1.name) : this.name.length()-person1.name.length();
     }
     public ArrayList<Phrase> getPhrases() {
         return phrases;

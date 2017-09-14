@@ -9,6 +9,7 @@ public class Client {
     private ByteArrayOutputStream baos = new ByteArrayOutputStream();
     private ObjectOutputStream obOutput;
     private Vector <Person> vectorClient = new Vector<>();
+    private DataVector dataVector;
     private SocketChannel sc;
     public SocketChannel getSocketChannel() {return sc;}
     public Vector<Person> getVectorClient() {
@@ -51,9 +52,45 @@ public class Client {
         }
     }
 
-    public void sendVectorToServer() {
+    public void loadDataVectorFromServer() {
         try {
-            obOutput.writeObject(vectorClient);
+            ByteBuffer size = ByteBuffer.allocate(1);
+            sc.read(size);
+            ByteBuffer bbvector = ByteBuffer.allocate(512* (int)size.get(0));
+            sc.read(bbvector);
+            ByteArrayInputStream bais = new ByteArrayInputStream(bbvector.array());
+            ObjectInputStream obInput = new ObjectInputStream(bais);
+            dataVector = (DataVector) obInput.readObject();
+            System.out.println(dataVector);
+            switch (dataVector.getInformation()) {
+                case DataVector.DELETE:
+                    vectorClient.remove(dataVector.getPerson());
+                    break;
+                case DataVector.UPDATE:
+                    vectorClient.set(vectorClient.indexOf(dataVector.getPerson()), dataVector.getPerson());
+                    break;
+                case DataVector.ADD:
+                    vectorClient.add(dataVector.getPerson());
+                    break;
+                default:
+                    System.out.println("Что-то другое");
+            }
+            bais.close();
+            obInput.close();
+            System.out.println("Данные приняты с сервера");
+        } catch (IOException e) {
+            System.out.println("Сервер отключился, поэтому клиент вынужден прекратить работу");
+            System.exit(20);
+        } catch (ClassNotFoundException e) {
+            System.out.println("Класс не найден");
+        }
+    }
+
+
+    public void sendDataVectorToServer(byte inform, Person person) {
+        try {
+            DataVector dv = new DataVector(inform, person);
+            obOutput.writeObject(dv);
             obOutput.flush();
             baos.flush();
             sc.write(ByteBuffer.wrap(baos.toByteArray()));
@@ -61,7 +98,7 @@ public class Client {
             obOutput.reset();
             System.out.println("Данные отправлены на сервер");
         } catch (IOException e) {
-            System.out.println("Ошибка отправки вектора на сервер");
+            e.printStackTrace();
         }
     }
 

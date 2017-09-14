@@ -33,5 +33,14 @@
         <use-password>true</use-password>
       </ssh-properties>
     </data-source>
+    <data-source name="postgres@localhost" uuid="af2a4fe8-15b5-4f2c-8b60-d4a16e5eed71">
+      <database-info product="PostgreSQL" version="9.3.19" jdbc-version="4.0" driver-name="PostgreSQL Native Driver" driver-version="PostgreSQL 9.4.1212">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>postgres</user-name>
+      <introspection-schemas>postgres:public</introspection-schemas>
+    </data-source>
   </component>
 </project>

@@ -25,9 +25,7 @@ public class Main extends Application {
     private static PaneDown pane11 = new PaneDown();
     private static Message message = new Message("", 15, 450);
     private static Message messageForMin = new Message("min = " + minPerson, 15, 470);
-    private ButtonAction loadButton = new ButtonAction("Перечитать из файла", 15, 130);
     private ButtonAction updateButton = new ButtonAction("Обновить", 15, 170);
-    private ButtonAction saveButton = new ButtonAction("Сохранить в файл", 15, 210);
     private ButtonAction removeLastButton = new ButtonAction("Удалить последний элемент", 15, 250);
     private ButtonAction removeButton = new ButtonAction("Удалить (по индексу)", 15, 290);
     private ButtonAction addIfMinButton = new ButtonAction("Добавить, если меньше", 15, 330);
@@ -61,12 +59,6 @@ public class Main extends Application {
         RBForImages rb3 = new RBForImages("наши сны", tg, Color.DARKMAGENTA);
         RBForImages rb4 = new RBForImages("взгляд в будущее", tg, Color.DARKBLUE);
 
-
-        loadButton.setOnAction(event -> {
-            checking();
-            client.connectionWithServer("Load");
-            message.setText("Коллекция успешно считана из файла");
-        });
         updateButton.setOnAction(event -> {
             checking();
             if (pane00.getChildren().contains(nameRB)) pane00.getChildren().remove(nameRB);
@@ -81,21 +73,15 @@ public class Main extends Application {
                 if (pane00.getChildren().contains(phraseRB)) pane00.getChildren().remove(phraseRB);
             });
         });
-        saveButton.setOnAction(event -> {
-            checking();
-            client.connectionWithServer("Save");
-            client.sendVectorToServer();
-            message.setText("Save is done :)");
-        });
         removeLastButton.setOnAction(event -> {
             checking();
             if (!client.getVectorClient().isEmpty()) {
+                client.connectionWithServer("Update server");
+                client.sendDataVectorToServer(DataVector.DELETE, client.getVectorClient().lastElement());
                 client.getVectorClient().remove(client.getVectorClient().lastElement());
                 message.setText("Remove last is done :)");
                 getMin();
                 rewriting();
-                client.connectionWithServer("Update server");
-                client.sendVectorToServer();
             } else message.setText("Vector is empty");
         });
         removeButton.setOnAction(event -> {
@@ -129,31 +115,12 @@ public class Main extends Application {
             rewriting();
             message.setText("Collection sorted on names");
         });
-      /*  stage.setOnCloseRequest(event -> {
-            Alert alert = new Alert(AlertType.CONFIRMATION);
-            alert.setTitle("Закрытие программы");
-            alert.setHeaderText(null);
-            alert.setContentText("Вы действительно хотите выйти?");
-            ButtonType yes = new ButtonType("Да");
-            ButtonType no = new ButtonType("Нет");
-            ButtonType cancel = new ButtonType("Отмена", ButtonData.CANCEL_CLOSE);
-            alert.getButtonTypes().setAll(yes, no, cancel);
-            Optional<ButtonType> result = alert.showAndWait();
-            if (result.get() == yes){
-                client.connectionWithServer("esc");
-                System.exit(0);
-            } else if (result.get() == no) {
-                alert.close();
-            } else if (result.get() == cancel) {
-                alert.close();
-            }
-        });*/
 
         rb1.setOnAction(event -> imagination(imv1, imv4, imv2, imv3));
         rb2.setOnAction(event -> imagination(imv2, imv1, imv4, imv3));
         rb3.setOnAction(event -> imagination(imv3, imv1, imv2, imv4));
         rb4.setOnAction(event -> imagination(imv4, imv1, imv2, imv3));
-        pane00.getChildren().addAll(loadButton, updateButton, saveButton, removeLastButton, removeButton, addIfMinButton, message, messageForMin);
+        pane00.getChildren().addAll(updateButton, removeLastButton, removeButton, addIfMinButton, message, messageForMin);
         pane01.getChildren().addAll(tvPerson, filterName);
         pane10.getChildren().addAll(iWant, rb1, rb2, rb3, rb4);
         Scene scene = new Scene(root, 850, 550);
@@ -301,7 +268,7 @@ public class Main extends Application {
             client.getVectorClient().get(integerCopy).setName(interactiveTextField.getText().trim());
             interactiveTextField.setText("");
             client.connectionWithServer("Update server");
-            client.sendVectorToServer();
+            client.sendDataVectorToServer(DataVector.UPDATE, client.getVectorClient().get(integerCopy));
             getMin();
             rewriting();
             message.setText("Name is updated");
@@ -334,7 +301,7 @@ public class Main extends Application {
         client.getVectorClient().get(a).setPhrase(b, new Phrase(interactiveTextField.getText().trim()));
         interactiveTextField.setText("");
         client.connectionWithServer("Update server");
-        client.sendVectorToServer();
+        client.sendDataVectorToServer(DataVector.UPDATE, client.getVectorClient().get(a));
         getMin();
         rewriting();
         message.setText("Phrase is updated");
@@ -355,11 +322,11 @@ public class Main extends Application {
                     if (index <= 0) {
                         message.setText("The number can't be negative");
                     } else {
+                        client.connectionWithServer("Update server");
+                        client.sendDataVectorToServer(DataVector.DELETE, client.getVectorClient().get(index-1));
                         client.getVectorClient().remove(index - 1);
                         getMin();
                         rewriting();
-                        client.connectionWithServer("Update server");
-                        client.sendVectorToServer();
                         message.setText("Remove is done :)");
                     }
                 }
@@ -383,8 +350,9 @@ public class Main extends Application {
                 if (minPerson == null) {
                     client.getVectorClient().addElement(person);
                     rewriting();
+                    person.setId(1);
                     client.connectionWithServer("Update server");
-                    client.sendVectorToServer();
+                    client.sendDataVectorToServer(DataVector.ADD, person);
                     element.setText("");
                     message.setText("Add if min is done :)");
                     minPerson = person;
@@ -392,10 +360,15 @@ public class Main extends Application {
                 } else {
                     if (minPerson.compareTo(person) > 0) {
                         minPerson = person;
+                        int j = -1;
+                        for (int i=0; i<client.getVectorClient().size(); i++) {
+                            if (client.getVectorClient().get(i).getId()>j) j = client.getVectorClient().get(i).getId();
+                        }
+                        person.setId(j+1);
                         client.getVectorClient().addElement(person);
                         rewriting();
                         client.connectionWithServer("Update server");
-                        client.sendVectorToServer();
+                        client.sendDataVectorToServer(DataVector.ADD, person);
                         element.setText("");
                         message.setText("Add_if_min is done :)");
                         messageForMin.setText("min = " + minPerson.getName());

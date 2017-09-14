@@ -11,6 +11,7 @@ public class ThreadForClient extends Thread{
     private Selector selector = null;
     private Client client = null;
     private long lastSend = 0;
+    private boolean first = true;
     public ThreadForClient(Client client) {
         socketChannel = client.getSocketChannel();
         this.client = client;
@@ -32,22 +33,33 @@ public class ThreadForClient extends Thread{
                 while (it.hasNext()) {
                     SelectionKey selKey = (SelectionKey) it.next();
                     it.remove();
-                    if(!selKey.isValid()) continue;
+                    if(!selKey.isValid()) {System.out.println("Ilya ne pidr");continue;}
                     if (selKey.isReadable()) {
                         if((System.currentTimeMillis()-lastSend)>1000) {
-                            lastSend = System.currentTimeMillis();
-                            client.loadVectorFromServer();
-                            Platform.runLater(new Runnable() {
-                                public void run() {
-                                    Main.getMin();
-                                    Main.rewriting();
-                                }
-                            });
-
+                            if (first) {
+                                lastSend = System.currentTimeMillis();
+                                client.loadVectorFromServer();
+                                Platform.runLater(new Runnable() {
+                                    public void run() {
+                                        Main.getMin();
+                                        Main.rewriting();
+                                    }
+                                });
+                                first = false;
+                            } else {
+                                lastSend = System.currentTimeMillis();
+                                client.loadDataVectorFromServer();
+                                Platform.runLater(new Runnable() {
+                                    public void run() {
+                                        Main.getMin();
+                                        Main.rewriting();
+                                    }});
+                            }
                         }
                     }
                 }
             }
+
         } catch (IOException e) {
             System.out.println("Ошибка создания канала или селектора");
         } finally {

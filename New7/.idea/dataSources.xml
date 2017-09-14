@@ -13,5 +13,14 @@
       <jdbc-driver>org.postgresql.Driver</jdbc-driver>
       <jdbc-url>jdbc:postgresql://192.168.10.99:5432/studs</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="postgres@localhost" uuid="af2a4fe8-15b5-4f2c-8b60-d4a16e5eed71">
+      <driver-ref>postgresql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.postgresql.Driver</jdbc-driver>
+      <jdbc-url>jdbc:postgresql://localhost:5432/postgres</jdbc-url>
+      <driver-properties>
+        <property name="ApplicationName" value="DataGrip" />
+      </driver-properties>
+    </data-source>
   </component>
 </project>

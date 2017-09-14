@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="postgres@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.3">
+    <root id="1"/>
+    <database id="2" parent="1" name="postgres">
+      <ObjectId>12029</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <schema id="3" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2017-09-14.20:06:01.042</IntrospectionTimestamp>
+      <IntrospectionStateNumber>680</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="4" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="5" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="6" parent="2" name="pg_temp_1">
+      <ObjectId>11215</ObjectId>
+    </schema>
+    <schema id="7" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11216</ObjectId>
+    </schema>
+    <schema id="8" parent="2" name="information_schema">
+      <ObjectId>11480</ObjectId>
+    </schema>
+    <table id="9" parent="3" name="person">
+      <ObjectId>16393</ObjectId>
+      <StateNumber>680</StateNumber>
+    </table>
+    <table id="10" parent="3" name="phrase">
+      <ObjectId>16403</ObjectId>
+      <StateNumber>680</StateNumber>
+    </table>
+    <column id="11" parent="9" name="id_per">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>678</StateNumber>
+    </column>
+    <column id="12" parent="9" name="name">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>678</StateNumber>
+    </column>
+    <index id="13" parent="9" name="person_pkey">
+      <ObjectId>16396</ObjectId>
+      <ColNames>id_per</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="14" parent="9" name="person_pkey">
+      <ObjectId>16397</ObjectId>
+      <ColNames>id_per</ColNames>
+      <UnderlyingIndexName>person_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="15" parent="10" name="phrase">
+      <Position>1</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>680</StateNumber>
+    </column>
+    <column id="16" parent="10" name="id_per">
+      <Position>2</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>680</StateNumber>
+    </column>
+    <index id="17" parent="10" name="phrase_pkey">
+      <ObjectId>16406</ObjectId>
+      <ColNames>phrase
+id_per</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="18" parent="10" name="phrase_pkey">
+      <ObjectId>16407</ObjectId>
+      <ColNames>phrase
+id_per</ColNames>
+      <UnderlyingIndexName>phrase_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="19" parent="10" name="phrase_id_per_fkey">
+      <ObjectId>16408</ObjectId>
+      <ColNames>id_per</ColNames>
+      <RefTableId>16393</RefTableId>
+      <RefColPositions>1</RefColPositions>
+      <RefTableName>person</RefTableName>
+      <RefKeyName>person_pkey</RefKeyName>
+      <RefColNames>id_per</RefColNames>
+      <OnDelete>cascade</OnDelete>
+      <OnUpdate>cascade</OnUpdate>
+    </foreign-key>
+  </database-model>
+</dataSource>
