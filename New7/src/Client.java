@@ -1,35 +1,25 @@
 import java.io.*;
 import java.net.*;
+import java.nio.ByteBuffer;
+import java.nio.channels.SocketChannel;
 import java.util.Vector;
 
 public class Client {
-    private Vector <Person> vectorClient = new Vector<>();
-    private Socket socket;
-    private ObjectInputStream obInput;
+    public boolean bool;
+    private ByteArrayOutputStream baos = new ByteArrayOutputStream();
     private ObjectOutputStream obOutput;
-    private DataOutputStream dataOutput;
-    private DataInputStream dataInput;
-    public DataOutputStream getDataOutput() {return dataOutput;}
-    public DataInputStream getDataInput() {return dataInput;}
-    public Socket getSocket () {
-        return socket;
-    }
+    private Vector <Person> vectorClient = new Vector<>();
+    private SocketChannel sc;
+    public SocketChannel getSocketChannel() {return sc;}
     public Vector<Person> getVectorClient() {
         return vectorClient;
     }
-    public void setVectorClient(Vector<Person> vector) {
-        vectorClient = vector;
-    }
     public Client () {
         try {
-            InetAddress address = InetAddress.getByName("DESKTOP-KANTA7F");
-            socket = new Socket(address, 6666);
-            InputStream in = socket.getInputStream();
-            OutputStream out = socket.getOutputStream();
-            dataOutput = new DataOutputStream(out);
-            dataInput = new DataInputStream(in);
-            obInput = new ObjectInputStream(in);
-            obOutput = new ObjectOutputStream(out);
+            sc = SocketChannel.open();
+            sc.connect(new InetSocketAddress("DESKTOP-KANTA7F", 6666));
+            sc.configureBlocking(false);
+            obOutput = new ObjectOutputStream(baos);
             System.out.println("Все потоки созданы");
         } catch (UnknownHostException e) {
             System.out.println("Не удалось установить соединение");
@@ -45,18 +35,30 @@ public class Client {
     }
 
     public void loadVectorFromServer() {
-        try {vectorClient =  (Vector<Person>) obInput.readObject();
+        try {
+            ByteBuffer size = ByteBuffer.allocate(1);
+            sc.read(size);
+            ByteBuffer bbvector = ByteBuffer.allocate(512* (int)size.get(0));
+            sc.read(bbvector);
+            ByteArrayInputStream bais = new ByteArrayInputStream(bbvector.array());
+            ObjectInputStream obInput = new ObjectInputStream(bais);
+            vectorClient = (Vector<Person>) obInput.readObject();
+            bais.close();
+            obInput.close();
             System.out.println("Данные приняты с сервера");
-        } catch (ClassNotFoundException e) {
-            System.out.println("Класс не найден");
-        } catch (IOException e) {
-            System.out.println("Ошибка чтения вектора с сервера");
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
     public void sendVectorToServer() {
-        try {obOutput.reset();
+        try {
             obOutput.writeObject(vectorClient);
+            obOutput.flush();
+            baos.flush();
+            sc.write(ByteBuffer.wrap(baos.toByteArray()));
+            baos.reset();
+            obOutput.reset();
             System.out.println("Данные отправлены на сервер");
         } catch (IOException e) {
             System.out.println("Ошибка отправки вектора на сервер");
@@ -65,8 +67,13 @@ public class Client {
 
     public void connectionWithServer(String str) {
         try {
-            dataOutput.writeUTF(str);
-            dataOutput.flush();
+            obOutput.writeObject(str);
+            obOutput.flush();
+            baos.flush();
+            sc.write(ByteBuffer.wrap(baos.toByteArray()));
+            baos.reset();
+            obOutput.reset();
+            System.out.println("Команда отправлена на сервер");
         } catch (IOException e) {
             System.out.println("Данные не отправлены на сервер либо не приняты");
         }

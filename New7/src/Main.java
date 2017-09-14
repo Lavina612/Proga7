@@ -1,6 +1,5 @@
 import java.io.*;
 import java.net.InetAddress;
-import java.util.Vector;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import javafx.application.Application;
@@ -17,9 +16,7 @@ import javafx.stage.*;
  */
 
 public class Main extends Application {
-    private static int count;
     private static Client client;
-//    private static Vector<Person> vectorOld;
     private static Person minPerson = null;
     private static Root root = new Root();
     private static AnchorPane pane00 = new AnchorPane();
@@ -39,10 +36,8 @@ public class Main extends Application {
     private static ButtonForUpdate phraseRB;
     private static InteractiveTextField interactiveTextField;
     private static FlowPane image = new FlowPane();
-    private static AnchorPane exit = new AnchorPane();
     private static ForButtonInteractive enter = new ForButtonInteractive("Enter",460, 230);
     private static ForButtonInteractive closeInteractive = new ForButtonInteractive("Close", 460, 270);
-
     private static Button closeImage = new Button("Close");
 
 
@@ -70,20 +65,7 @@ public class Main extends Application {
         loadButton.setOnAction(event -> {
             checking();
             client.connectionWithServer("Load");
-            client.loadVectorFromServer();
-            try {
-                count = client.getDataInput().readInt();
-            } catch (IOException e) {
-                System.out.println("Не удалось принять count");
-            }
-            if (count != -1) {
-                Vector <Person> vector = client.getVectorClient();
-                vector.removeAllElements();
-                client.setVectorClient(vector);
-                message.setText("Person" + count + " must have a name. Correct it and try again");
-            } else message.setText("Коллекция успешно считана из файла");
-            getMin();
-            rewriting();
+            message.setText("Коллекция успешно считана из файла");
         });
         updateButton.setOnAction(event -> {
             checking();
@@ -112,7 +94,7 @@ public class Main extends Application {
                 message.setText("Remove last is done :)");
                 getMin();
                 rewriting();
-                client.connectionWithServer("Remove last");
+                client.connectionWithServer("Update server");
                 client.sendVectorToServer();
             } else message.setText("Vector is empty");
         });
@@ -147,53 +129,43 @@ public class Main extends Application {
             rewriting();
             message.setText("Collection sorted on names");
         });
-        stage.setOnCloseRequest(event -> {
-          //  if (!vectorOld.equals(client.getVectorClient())) {
-                exit.relocate(375, 250);
-                exit.setStyle("-fx-background-color: lightblue");
-                exit.setPrefWidth(100);
-                exit.setPrefHeight(50);
-                root.add(exit, 0, 0);
-                Message exitQuestion = new Message("Хотите сохранить изменения?", 20, 10);
-                ButtonExit yes = new ButtonExit("Yes", 10, 35);
-                ButtonExit no = new ButtonExit("No", 40, 35);
-                ButtonExit cancel = new ButtonExit("Cancel", 70, 35);
-                yes.setStyle("-fx-background-color: aqua");
-                exit.getChildren().addAll(exitQuestion, yes, no, cancel);
-                yes.setOnAction(event1 -> {
-                    client.connectionWithServer("Save");
-                    client.sendVectorToServer();
-                });
-                no.setOnAction(event2 -> {
-                    System.exit(0);
-                });
-                cancel.setOnAction(event3 -> {
-                    pane00.getChildren().remove(exit);
-                });
-         //   }
-        });
+      /*  stage.setOnCloseRequest(event -> {
+            Alert alert = new Alert(AlertType.CONFIRMATION);
+            alert.setTitle("Закрытие программы");
+            alert.setHeaderText(null);
+            alert.setContentText("Вы действительно хотите выйти?");
+            ButtonType yes = new ButtonType("Да");
+            ButtonType no = new ButtonType("Нет");
+            ButtonType cancel = new ButtonType("Отмена", ButtonData.CANCEL_CLOSE);
+            alert.getButtonTypes().setAll(yes, no, cancel);
+            Optional<ButtonType> result = alert.showAndWait();
+            if (result.get() == yes){
+                client.connectionWithServer("esc");
+                System.exit(0);
+            } else if (result.get() == no) {
+                alert.close();
+            } else if (result.get() == cancel) {
+                alert.close();
+            }
+        });*/
 
         rb1.setOnAction(event -> imagination(imv1, imv4, imv2, imv3));
         rb2.setOnAction(event -> imagination(imv2, imv1, imv4, imv3));
         rb3.setOnAction(event -> imagination(imv3, imv1, imv2, imv4));
         rb4.setOnAction(event -> imagination(imv4, imv1, imv2, imv3));
         pane00.getChildren().addAll(loadButton, updateButton, saveButton, removeLastButton, removeButton, addIfMinButton, message, messageForMin);
-        pane01.getChildren().add(filterName);
+        pane01.getChildren().addAll(tvPerson, filterName);
         pane10.getChildren().addAll(iWant, rb1, rb2, rb3, rb4);
-        getMin();
-        rewriting();
         Scene scene = new Scene(root, 850, 550);
         stage.setScene(scene);
         stage.show();
     }
 
 
-
-
     /**
      * Метод находит минимальный элемент в коллекции
      */
-    private static void getMin() {
+    public static synchronized void getMin() {
         if (!client.getVectorClient().isEmpty()) {
             minPerson = client.getVectorClient().get(0);
             for (Person person : client.getVectorClient()) {
@@ -201,7 +173,6 @@ public class Main extends Application {
             }
             messageForMin.setText("min = " + minPerson);
         } else {
-            if (!message.getText().substring(0,6).equals("Person"))
             message.setText("No elements in Collection");
             minPerson = null;
             messageForMin.setText("min = null");
@@ -211,7 +182,7 @@ public class Main extends Application {
     /**
      * Метод переписывает дерево Person-ов для актуального отображения данных
      */
-    private static void rewriting() {
+    public static synchronized void rewriting() {
         pane01.getChildren().remove(tvPerson);
         TreeItem<String> tiRoot = new TreeItem<>("Persons");
         for (int i = 0; i < client.getVectorClient().size(); i++) {
@@ -268,26 +239,6 @@ public class Main extends Application {
             root.getChildren().remove(image);
             pane10.getChildren().remove(closeImage);
         });
-    }
-
-    private static void load() {
-        if (!client.getVectorClient().isEmpty()) {
-            int count = -1;
-            for (int i = 0; i<client.getVectorClient().size(); i++) {
-                if ("".equals(client.getVectorClient().get(i).getName())) count = i;
-                System.out.println(i);
-            }
-            if(count == -1) {
-                message.setText("Loading is done :)");
-                getMin();
-                rewriting();
-            } else {
-                message.setText("Person" + count + " must have a name. Correct this and try again");
-                Vector <Person> vector = client.getVectorClient();
-                vector.removeAllElements();
-                client.setVectorClient(vector);
-            }
-        } else message.setText("Коллекция пустая");
     }
 
     /**
@@ -349,7 +300,7 @@ public class Main extends Application {
         } else {
             client.getVectorClient().get(integerCopy).setName(interactiveTextField.getText().trim());
             interactiveTextField.setText("");
-            client.connectionWithServer("Update");
+            client.connectionWithServer("Update server");
             client.sendVectorToServer();
             getMin();
             rewriting();
@@ -382,7 +333,7 @@ public class Main extends Application {
     private static void forNewPhrase(int a, int b) {
         client.getVectorClient().get(a).setPhrase(b, new Phrase(interactiveTextField.getText().trim()));
         interactiveTextField.setText("");
-        client.connectionWithServer("Update");
+        client.connectionWithServer("Update server");
         client.sendVectorToServer();
         getMin();
         rewriting();
@@ -407,7 +358,7 @@ public class Main extends Application {
                         client.getVectorClient().remove(index - 1);
                         getMin();
                         rewriting();
-                        client.connectionWithServer("Remove");
+                        client.connectionWithServer("Update server");
                         client.sendVectorToServer();
                         message.setText("Remove is done :)");
                     }
@@ -432,7 +383,7 @@ public class Main extends Application {
                 if (minPerson == null) {
                     client.getVectorClient().addElement(person);
                     rewriting();
-                    client.connectionWithServer("Add if min");
+                    client.connectionWithServer("Update server");
                     client.sendVectorToServer();
                     element.setText("");
                     message.setText("Add if min is done :)");
@@ -443,7 +394,7 @@ public class Main extends Application {
                         minPerson = person;
                         client.getVectorClient().addElement(person);
                         rewriting();
-                        client.connectionWithServer("Add if min");
+                        client.connectionWithServer("Update server");
                         client.sendVectorToServer();
                         element.setText("");
                         message.setText("Add_if_min is done :)");
@@ -466,25 +417,24 @@ public class Main extends Application {
 
 
     public static void main(String[] args) throws IOException{
-        System.out.println(InetAddress.getLocalHost());
-        client = new Client();
-        client.loadVectorFromServer();
-        count = client.getDataInput().readInt();
-        if (count != -1) {
-            Vector <Person> vector = client.getVectorClient();
-            vector.removeAllElements();
-            client.setVectorClient(vector);
-            System.out.println("Person" + count + " must have a name. Correct it and try again");
+        ThreadForClient tfc = null;
+        try {
+            System.out.println(InetAddress.getLocalHost());
+            client = new Client();
+            tfc = new ThreadForClient(client);
+            tfc.start();
+            tfc.setName("Thread For Client");
+            message.setText("Коллекция успешно загружена");
+            launch(args);
+            client.bool = true;
             client.connectionWithServer("esc");
-            System.exit(1);
-        } else message.setText("Коллекция успешно загружена");
-   //     vectorOld = client.getVectorClient();
-        System.out.println(client.getVectorClient().size());
-        launch(args);
-        client.connectionWithServer("esc");
-        client.getDataOutput().close();
-        client.getSocket().close();
-        System.exit(0);
+            tfc.wakeup();
+            System.exit(0);
+        } catch (IOException e) {
+            tfc.interrupt();
+            System.out.println("Сервер отключился");
+            System.exit(666);
+        }
     }
 }
 
