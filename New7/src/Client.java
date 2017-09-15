@@ -30,7 +30,6 @@ public class Client {
             System.exit(2);
         } catch (IOException e) {
             System.out.println("Не удалось создать сокет");
-            e.printStackTrace();
             System.exit(3);
         }
     }
@@ -47,8 +46,10 @@ public class Client {
             bais.close();
             obInput.close();
             System.out.println("Данные приняты с сервера");
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (IOException e) {
+            System.out.println("Не удалось принять данные с сервера");
+        } catch (ClassNotFoundException e) {
+            System.out.println("Класс не найден");
         }
     }
 
@@ -61,7 +62,6 @@ public class Client {
             ByteArrayInputStream bais = new ByteArrayInputStream(bbvector.array());
             ObjectInputStream obInput = new ObjectInputStream(bais);
             dataVector = (DataVector) obInput.readObject();
-            System.out.println(dataVector);
             switch (dataVector.getInformation()) {
                 case DataVector.DELETE:
                     vectorClient.remove(dataVector.getPerson());

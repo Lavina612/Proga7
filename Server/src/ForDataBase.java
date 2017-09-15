@@ -7,10 +7,10 @@ import java.sql.Statement;
 import java.util.Vector;
 
 public class ForDataBase {
-    PGConnectionPoolDataSource pgConPoolDS = new PGConnectionPoolDataSource();
-    PooledConnection pooledConnection;
-    String username;
-    String password;
+    private PGConnectionPoolDataSource pgConPoolDS = new PGConnectionPoolDataSource();
+    private PooledConnection pooledConnection;
+    private String username;
+    private String password;
     public ForDataBase (String url, String username, String password, String driver) throws SQLException, ClassNotFoundException {
         this.username = username;
         this.password = password;
@@ -46,7 +46,7 @@ public class ForDataBase {
         try {
             for (Phrase phrase : dv.getPerson().getPhrases()) {
                 Statement statementU3 = connectionU1.createStatement();
-                str = "insert into phrase values ('" + phrase + "'," + dv.getPerson().getId() + ");";
+                str = "insert into phrase values ('" + phrase.getPhrase() + "'," + dv.getPerson().getId() + ");";
                 statementU3.execute(str);
                 statementU3.close();
             }
@@ -89,7 +89,6 @@ public class ForDataBase {
                     connection.setAutoCommit(false);
                     Statement statementA1 = connection.createStatement();
                     str = "insert into person values (" + dv.getPerson().getId() + ",'" + dv.getPerson().getName() + "');";
-                    System.out.println(str);
                     statementA1.execute(str);
                     statementA1.close();
                     insert(str, dv, connection);
@@ -104,7 +103,7 @@ public class ForDataBase {
             try {
                 connection.rollback();
             } catch (SQLException e1) {
-                System.out.println("jfjqwopfqpfjqokfap");
+                System.out.println("Очередная ошибка с БД");
             }
             e.printStackTrace();
         }

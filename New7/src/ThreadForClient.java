@@ -33,7 +33,7 @@ public class ThreadForClient extends Thread{
                 while (it.hasNext()) {
                     SelectionKey selKey = (SelectionKey) it.next();
                     it.remove();
-                    if(!selKey.isValid()) {System.out.println("Ilya ne pidr");continue;}
+                    if(!selKey.isValid()) continue;
                     if (selKey.isReadable()) {
                         if((System.currentTimeMillis()-lastSend)>1000) {
                             if (first) {

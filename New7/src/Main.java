@@ -10,6 +10,8 @@ import javafx.scene.layout.*;
 import javafx.scene.image.*;
 import javafx.scene.paint.*;
 import javafx.stage.*;
+import forGUI.*;
+
 /**
  * @author Elisa, P3111
  * @version 1.0
@@ -23,47 +25,47 @@ public class Main extends Application {
     private static AnchorPane pane01 = new AnchorPane();
     private static PaneDown pane10 = new PaneDown();
     private static PaneDown pane11 = new PaneDown();
-    private static Message message = new Message("", 15, 450);
-    private static Message messageForMin = new Message("min = " + minPerson, 15, 470);
-    private ButtonAction updateButton = new ButtonAction("Обновить", 15, 170);
-    private ButtonAction removeLastButton = new ButtonAction("Удалить последний элемент", 15, 250);
-    private ButtonAction removeButton = new ButtonAction("Удалить (по индексу)", 15, 290);
-    private ButtonAction addIfMinButton = new ButtonAction("Добавить, если меньше", 15, 330);
+    private static Message message = new Message("", 15, 420);
+    private static Message messageForMin = new Message("min = " + minPerson, 15, 440);
+    private ButtonAction updateButton = new ButtonAction("Обновить элемент", 15, 170);
+    private ButtonAction removeLastButton = new ButtonAction("Удалить последний", 15, 210);
+    private ButtonAction removeButton = new ButtonAction("Удалить (по индексу)", 15, 250);
+    private ButtonAction addIfMinButton = new ButtonAction("Добавить, если меньше", 15, 290);
     private static TreeView<String> tvPerson = new TreeView<>();
     private static ButtonForUpdate nameRB;
     private static ButtonForUpdate phraseRB;
     private static InteractiveTextField interactiveTextField;
     private static FlowPane image = new FlowPane();
-    private static ForButtonInteractive enter = new ForButtonInteractive("Enter",460, 230);
-    private static ForButtonInteractive closeInteractive = new ForButtonInteractive("Close", 460, 270);
-    private static Button closeImage = new Button("Close");
+    private static ForButtonInteractive enter = new ForButtonInteractive("Ввод",460, 230);
+    private static ForButtonInteractive closeInteractive = new ForButtonInteractive("Закрыть", 460, 270);
+    private static Button closeImage = new Button("Закрыть");
 
 
 
     public void start(Stage stage) {
-        stage.setTitle("Laba07");
+        stage.setTitle("Лабораторная 07");
         root.add(pane00, 0, 0);
         root.add(pane01, 1, 0);
         root.add(pane10, 0, 1);
         root.add(pane11, 1, 1);
-        ButtonAction filterName = new ButtonAction("Sort on name", 45, 430);
+        ButtonAction filterName = new ButtonAction("Отсортировать", 45, 420);
         MyImageView imv1 = new MyImageView(new Image("/images/БольИСтрадания.jpg"));
-        MyImageView imv2 = new MyImageView(new Image("/images/Утка.jpg"));
-        MyImageView imv3 = new MyImageView(new Image("/images/Мечты.jpg"));
+        MyImageView imv2 = new MyImageView(new Image("/images/Фичи.png"));
+        MyImageView imv3 = new MyImageView(new Image("/images/МурМур.jpg"));
         MyImageView imv4 = new MyImageView(new Image("/images/СамыйЛучшийПреподавательНаСвете.jpg"));
         Label iWant = new Label("Я хочу увидеть...");
         iWant.setTextFill(Color.DARKVIOLET);
         ToggleGroup tg = new ToggleGroup();
-        RBForImages rb1 = new RBForImages("ВТ", tg, Color.DARKRED);
-        RBForImages rb2 = new RBForImages("уточку", tg, Color.DARKGOLDENROD);
-        RBForImages rb3 = new RBForImages("наши сны", tg, Color.DARKMAGENTA);
+        RBForImages rb1 = new RBForImages("сдачу лаб", tg, Color.DARKRED);
+        RBForImages rb2 = new RBForImages("истину жизни", tg, Color.DARKGOLDENROD);
+        RBForImages rb3 = new RBForImages("поздравление", tg, Color.DARKMAGENTA);
         RBForImages rb4 = new RBForImages("взгляд в будущее", tg, Color.DARKBLUE);
 
         updateButton.setOnAction(event -> {
             checking();
             if (pane00.getChildren().contains(nameRB)) pane00.getChildren().remove(nameRB);
             if (pane00.getChildren().contains(phraseRB)) pane00.getChildren().remove(phraseRB);
-            interactiveTextField = new InteractiveTextField("Enter number of person");
+            interactiveTextField = new InteractiveTextField("Введите номер person");
             pane00.getChildren().addAll(interactiveTextField, enter, closeInteractive);
             enter.setOnAction(event1 -> updateAction());
             interactiveTextField.setOnAction(event1 -> updateAction());
@@ -79,14 +81,14 @@ public class Main extends Application {
                 client.connectionWithServer("Update server");
                 client.sendDataVectorToServer(DataVector.DELETE, client.getVectorClient().lastElement());
                 client.getVectorClient().remove(client.getVectorClient().lastElement());
-                message.setText("Remove last is done :)");
+                message.setText("Последний элемент удален");
                 getMin();
                 rewriting();
-            } else message.setText("Vector is empty");
+            } else message.setText("Коллекция пустая");
         });
         removeButton.setOnAction(event -> {
             checking();
-            interactiveTextField = new InteractiveTextField("Write number of element");
+            interactiveTextField = new InteractiveTextField("Введите номер person");
             pane00.getChildren().addAll(interactiveTextField, enter, closeInteractive);
             enter.setOnAction(event1 -> removeOnIndex(interactiveTextField));
             interactiveTextField.setOnAction(event1 -> removeOnIndex(interactiveTextField));
@@ -113,7 +115,7 @@ public class Main extends Application {
                 }
             }
             rewriting();
-            message.setText("Collection sorted on names");
+            message.setText("Коллекция отсортирована по имени");
         });
 
         rb1.setOnAction(event -> imagination(imv1, imv4, imv2, imv3));
@@ -123,8 +125,13 @@ public class Main extends Application {
         pane00.getChildren().addAll(updateButton, removeLastButton, removeButton, addIfMinButton, message, messageForMin);
         pane01.getChildren().addAll(tvPerson, filterName);
         pane10.getChildren().addAll(iWant, rb1, rb2, rb3, rb4);
-        Scene scene = new Scene(root, 850, 550);
+        pane11.getChildren().add(new Message(" У меня девиз один: \n Код из фич непобедим :)", 0,0));
+        Scene scene = new Scene(root, 860, 550);
         stage.setScene(scene);
+        stage.setMinWidth(874);
+        stage.setMinHeight(589);
+        stage.setMaxHeight(589);
+        stage.setMaxWidth(874);
         stage.show();
     }
 
@@ -138,9 +145,9 @@ public class Main extends Application {
             for (Person person : client.getVectorClient()) {
                 if (minPerson.compareTo(person) > 0) minPerson = person;
             }
-            messageForMin.setText("min = " + minPerson);
+            messageForMin.setText("min = " + minPerson.toString());
         } else {
-            message.setText("No elements in Collection");
+            message.setText("Коллекция пустая");
             minPerson = null;
             messageForMin.setText("min = null");
         }
@@ -227,7 +234,7 @@ public class Main extends Application {
                     pane00.getChildren().addAll(nameRB, phraseRB);
                     nameRB.setOnAction(event -> {
                                 pane00.getChildren().removeAll(nameRB, phraseRB);
-                                interactiveTextField.setPromptText("Enter name");
+                                interactiveTextField.setPromptText("Введите имя");
                                 pane00.getChildren().add(interactiveTextField);
                                 enter.setOnAction(event1 -> forNameRB(integerCopy));
                                 interactiveTextField.setOnAction(event1 -> forNameRB(integerCopy));
@@ -236,9 +243,9 @@ public class Main extends Application {
                     phraseRB.setOnAction(event -> {
                                 pane00.getChildren().removeAll(nameRB, phraseRB);
                                 if (client.getVectorClient().get(integerCopy).getPhrases().isEmpty()) {
-                                    message.setText("There are not phrases");
+                                    message.setText("У этого элемента нет фраз");
                                 } else {
-                                    interactiveTextField.setPromptText("Enter number of phrase");
+                                    interactiveTextField.setPromptText("Введите номер фразы");
                                     pane00.getChildren().add(interactiveTextField);
                                     enter.setOnAction(event1 -> forPhraseRB(integerCopy)
                                     );
@@ -248,22 +255,22 @@ public class Main extends Application {
                             }
                     );
                 } else {
-                    message.setText("Number can't be negative");
+                    message.setText("Номер не может быть не положительным");
                     interactiveTextField.setText("");
                 }
             } else {
-                message.setText("The number more than elements in Collection");
+                message.setText("Слишком большой номер");
                 interactiveTextField.setText("");
             }
         } catch (NumberFormatException e) {
-            message.setText("Sorry, but you wrote a nonsense");
+            message.setText("Чёт бред какой-то. Цифру плиз");
             interactiveTextField.setText("");
         }
     }
 
     private static void forNameRB (int integerCopy) {
         if(interactiveTextField.getText().trim().isEmpty()) {
-            message.setText("Name can't be empty");
+            message.setText("Имя не может быть пустым");
         } else {
             client.getVectorClient().get(integerCopy).setName(interactiveTextField.getText().trim());
             interactiveTextField.setText("");
@@ -271,7 +278,7 @@ public class Main extends Application {
             client.sendDataVectorToServer(DataVector.UPDATE, client.getVectorClient().get(integerCopy));
             getMin();
             rewriting();
-            message.setText("Name is updated");
+            message.setText("Имя изменено");
         }
     }
 
@@ -281,18 +288,18 @@ public class Main extends Application {
             int b = --int2;
             interactiveTextField.setText("");
             if (int2 < 0)
-                message.setText("The number can't be negative");
+                message.setText("Номер не может быть не положительным");
             else if (int2 >= client.getVectorClient().get(a).getPhrases().size())
-                message.setText("The number more than elements in Collection");
+                message.setText("Слишком большой номер");
             else {
                 pane00.getChildren().remove(interactiveTextField);
-                interactiveTextField.setPromptText("Enter a phrase");
+                interactiveTextField.setPromptText("Введите фразу");
                 pane00.getChildren().add(interactiveTextField);
                 interactiveTextField.setOnAction(event2 -> forNewPhrase(a,b));
                 enter.setOnAction(event2 -> forNewPhrase(a,b));
             }
         } catch (NumberFormatException e) {
-            message.setText("Sorry, but you wrote a nonsense");
+            message.setText("Чёт вообще бред. Тут циферка должна быть");
             interactiveTextField.setText("");
         }
     }
@@ -304,7 +311,7 @@ public class Main extends Application {
         client.sendDataVectorToServer(DataVector.UPDATE, client.getVectorClient().get(a));
         getMin();
         rewriting();
-        message.setText("Phrase is updated");
+        message.setText("Фраза обновлена");
     }
 
     /**
@@ -314,27 +321,27 @@ public class Main extends Application {
         try {
             Integer index = new Integer(indexField.getText());
             if (client.getVectorClient().isEmpty()) {
-                message.setText("Vector is empty");
+                message.setText("Коллекция пустая");
             } else {
                 if (index > client.getVectorClient().size()) {
-                    message.setText("The number more than elements in Collection");
+                    message.setText("Слишком большой номер");
                 } else {
                     if (index <= 0) {
-                        message.setText("The number can't be negative");
+                        message.setText("Номер не может быть не положительным");
                     } else {
                         client.connectionWithServer("Update server");
                         client.sendDataVectorToServer(DataVector.DELETE, client.getVectorClient().get(index-1));
                         client.getVectorClient().remove(index - 1);
                         getMin();
                         rewriting();
-                        message.setText("Remove is done :)");
+                        message.setText("Удаление прошло успешно");
                     }
                 }
             }
             indexField.setText("");
         } catch (NumberFormatException e) {
-            if (indexField.getText().equals("")) message.setText("You didn't write anything");
-            else message.setText("Sorry, but you wrote a nonsense. Try again!");
+            if (indexField.getText().equals("")) message.setText("Надо бы что-нибудь написать...");
+            else message.setText("Мне кажется, стоит написать адекватную цифру");
             indexField.setText("");
         }
     }
@@ -354,7 +361,7 @@ public class Main extends Application {
                     client.connectionWithServer("Update server");
                     client.sendDataVectorToServer(DataVector.ADD, person);
                     element.setText("");
-                    message.setText("Add if min is done :)");
+                    message.setText("Минимальный элемент добавлен");
                     minPerson = person;
                     messageForMin.setText("min = " + minPerson.getName());
                 } else {
@@ -370,18 +377,18 @@ public class Main extends Application {
                         client.connectionWithServer("Update server");
                         client.sendDataVectorToServer(DataVector.ADD, person);
                         element.setText("");
-                        message.setText("Add_if_min is done :)");
+                        message.setText("Минимальный элемент добавлен");
                         messageForMin.setText("min = " + minPerson.getName());
                     } else {
-                        message.setText("Element is more than min");
+                        message.setText("Этот элемент не меньше минимального");
                         element.setText("");
                     }
                 }
             } else {
-                message.setText("Sorry, but person must have a name");
+                message.setText("Имя не может быть пустым");
             }
         } catch (JsonSyntaxException e) {
-            message.setText("Sorry, it's not JSON");
+            message.setText("Это не формат JSON");
         } catch (NullPointerException e) {
             message.setText("Sorry, null cannot be here");
             element.setText("");
@@ -397,7 +404,7 @@ public class Main extends Application {
             tfc = new ThreadForClient(client);
             tfc.start();
             tfc.setName("Thread For Client");
-            message.setText("Коллекция успешно загружена");
+            message.setText("Коллекция обновлена по новым изменениям");
             launch(args);
             client.bool = true;
             client.connectionWithServer("esc");

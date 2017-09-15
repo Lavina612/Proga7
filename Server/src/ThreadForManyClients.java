@@ -53,7 +53,7 @@ public class ThreadForManyClients extends Thread {
             System.out.println("Клиент №" + countClients + "отключился");
             listOfThreads.remove(this);
         } catch (SQLException e) {
-            e.printStackTrace();
+            System.out.println("Какая-то проблема с БД");
         }
     }
 
@@ -65,12 +65,12 @@ public class ThreadForManyClients extends Thread {
             obOutput.writeObject(vectorServer);
             obOutput.flush();
             baos.flush();
-            out.write((int)Math.ceil((double)baos.size()/(double)512.0));
+            out.write((int)Math.ceil((double)baos.size()/512.0));
             out.write(baos.toByteArray());
             out.flush();
             System.out.println("Данные отправлены клиенту №" + countClients);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (IOException e) {
+            System.out.println("Ошибка с потоками в sendToClient()");
         }
     }
 
@@ -83,19 +83,18 @@ public class ThreadForManyClients extends Thread {
             System.out.println(dv);
             obOutput.flush();
             baos.flush();
-            out.write((int)Math.ceil((double)baos.size()/(double)512.0));
+            out.write((int)Math.ceil((double)baos.size()/512.0));
             out.write(baos.toByteArray());
             out.flush();
             System.out.println("Данные отправлены клиенту №" + countClients);
-        } catch (Exception e) {
-            e.printStackTrace();
+        } catch (IOException e) {
+            System.out.println("Ошибка с потоками в sendDataVectorToClient()");
         }
     }
 
     public void loadDataVectorFromClient() {
         try {
             dv =  (DataVector) obInput.readObject();
-            System.out.println(dv);
             System.out.println("Данные приняты от клиента №" + countClients);
             if (!listOfThreads.isEmpty()) {
                 for (ThreadForManyClients tfmc : listOfThreads) {
@@ -107,8 +106,8 @@ public class ThreadForManyClients extends Thread {
         } catch (ClassNotFoundException e) {
             System.out.println("Класс не найден");
         } catch (IOException e) {
-            e.printStackTrace();
-            System.exit(456);
+            System.out.println("Ошибка с потоками в loadDataVectorFromClient()");
+            // System.exit(456);
         }
     }
 
@@ -123,7 +122,5 @@ public class ThreadForManyClients extends Thread {
         } catch (ClassNotFoundException e) {
             System.out.println("Класс не найден");
         }
-
     }
-
 }

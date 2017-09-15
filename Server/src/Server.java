@@ -29,16 +29,13 @@ public class Server {
             System.out.println("Сервер уже подключен");
             System.exit(10);
         } catch (IOException e) {
-            e.printStackTrace();
             System.out.println("Ошибка с вводом/выводом данных");
             System.exit(11);
         } catch (SQLException e) {
             System.out.println("Не удаётся подключиться к БД");
-            e.printStackTrace();
             System.exit(12);
         } catch (ClassNotFoundException e) {
             System.out.println("Класс не найден");
-            e.printStackTrace();
             System.exit(13);
         }
     }

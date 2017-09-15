@@ -27,10 +27,6 @@ public class Person implements Comparable <Person>, Serializable {
     public void setId (int id) {
         this.id = id;
     }
-    public String getPhrase (int i){
-        return phrases.get(i).getPhrase();}
-    public void deletePhrase (int i) {
-        phrases.remove(i);}
     public void setName (String newName) {
         name = newName;
     }
@@ -44,14 +40,6 @@ public class Person implements Comparable <Person>, Serializable {
     public Person () {
         phrases = new ArrayList <> ();
     }
-    public void say() {
-        System.out.println(name + " says");
-        for (int i=0; i<phrases.size(); i++) {
-            System.out.println(" " + phrases.get(i));
-            if (i!=phrases.size()) System.out.println(", ");
-        }
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
