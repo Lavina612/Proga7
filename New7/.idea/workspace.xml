@@ -5,34 +5,53 @@
       <artifact name="New5:jar" />
     </artifacts-to-build>
   </component>
-  <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/ThreadForClient.java" line="37" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="98593bc4-4f9c-4c7d-a87a-9fbd0370e5ef" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ButtonAction.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ButtonExit.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ButtonForUpdate.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/ForButtonInteractive.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/InteractiveTextField.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Message.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/MyImageView.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/PaneDown.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/RBForImages.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/Root.java" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/texts/zpz.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/texts/zpz_ru_RU.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/texts/zpz_sl_SI.properties" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Server/src/ORM.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Server/src/ORMException.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/af2a4fe8-15b5-4f2c-8b60-d4a16e5eed71/_metadata_/metadata" afterPath="$PROJECT_DIR$/.idea/dataSources/af2a4fe8-15b5-4f2c-8b60-d4a16e5eed71/_metadata_/metadata" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/af2a4fe8-15b5-4f2c-8b60-d4a16e5eed71/_metadata_/metadata.keystream" afterPath="$PROJECT_DIR$/.idea/dataSources/af2a4fe8-15b5-4f2c-8b60-d4a16e5eed71/_metadata_/metadata.keystream" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/af2a4fe8-15b5-4f2c-8b60-d4a16e5eed71/_metadata_/metadata.keystream.len" afterPath="$PROJECT_DIR$/.idea/dataSources/af2a4fe8-15b5-4f2c-8b60-d4a16e5eed71/_metadata_/metadata.keystream.len" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/af2a4fe8-15b5-4f2c-8b60-d4a16e5eed71/_metadata_/metadata.len" afterPath="$PROJECT_DIR$/.idea/dataSources/af2a4fe8-15b5-4f2c-8b60-d4a16e5eed71/_metadata_/metadata.len" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/af2a4fe8-15b5-4f2c-8b60-d4a16e5eed71/_metadata_/metadata_i" afterPath="$PROJECT_DIR$/.idea/dataSources/af2a4fe8-15b5-4f2c-8b60-d4a16e5eed71/_metadata_/metadata_i" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/af2a4fe8-15b5-4f2c-8b60-d4a16e5eed71/_metadata_/metadata_i.len" afterPath="$PROJECT_DIR$/.idea/dataSources/af2a4fe8-15b5-4f2c-8b60-d4a16e5eed71/_metadata_/metadata_i.len" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/New5_jar/New5.jar" afterPath="$PROJECT_DIR$/out/artifacts/New5_jar/New5.jar" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/New5/Client.class" afterPath="$PROJECT_DIR$/out/production/New5/Client.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/New5/Main.class" afterPath="$PROJECT_DIR$/out/production/New5/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/images/Thumbs.db" afterPath="$PROJECT_DIR$/resources/images/Thumbs.db" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/images/БольИСтрадания.jpg" afterPath="$PROJECT_DIR$/resources/images/БольИСтрадания.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/New5/Person.class" afterPath="$PROJECT_DIR$/out/production/New5/Person.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/New5/Phrase.class" afterPath="$PROJECT_DIR$/out/production/New5/Phrase.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/New5/ThreadForClient$1.class" afterPath="$PROJECT_DIR$/out/production/New5/ThreadForClient$1.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/New5/ThreadForClient$2.class" afterPath="$PROJECT_DIR$/out/production/New5/ThreadForClient$2.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/New5/ThreadForClient.class" afterPath="$PROJECT_DIR$/out/production/New5/ThreadForClient.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/New5/images/СамыйЛучшийПреподавательНаСвете.jpg" afterPath="$PROJECT_DIR$/out/production/New5/images/СамыйЛучшийПреподавательНаСвете.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/images/СамыйЛучшийПреподавательНаСвете.jpg" afterPath="$PROJECT_DIR$/resources/images/СамыйЛучшийПреподавательНаСвете.jpg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/.idea/dataSources/cf2abce5-72d5-42e5-8cb2-d9fe77612b57/_metadata_/metadata" afterPath="$PROJECT_DIR$/../Server/.idea/dataSources/cf2abce5-72d5-42e5-8cb2-d9fe77612b57/_metadata_/metadata" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/.idea/dataSources/cf2abce5-72d5-42e5-8cb2-d9fe77612b57/_metadata_/metadata.keystream" afterPath="$PROJECT_DIR$/../Server/.idea/dataSources/cf2abce5-72d5-42e5-8cb2-d9fe77612b57/_metadata_/metadata.keystream" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/.idea/dataSources/cf2abce5-72d5-42e5-8cb2-d9fe77612b57/_metadata_/metadata.keystream.len" afterPath="$PROJECT_DIR$/../Server/.idea/dataSources/cf2abce5-72d5-42e5-8cb2-d9fe77612b57/_metadata_/metadata.keystream.len" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/.idea/dataSources/cf2abce5-72d5-42e5-8cb2-d9fe77612b57/_metadata_/metadata.len" afterPath="$PROJECT_DIR$/../Server/.idea/dataSources/cf2abce5-72d5-42e5-8cb2-d9fe77612b57/_metadata_/metadata.len" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/.idea/dataSources/cf2abce5-72d5-42e5-8cb2-d9fe77612b57/_metadata_/metadata_i" afterPath="$PROJECT_DIR$/../Server/.idea/dataSources/cf2abce5-72d5-42e5-8cb2-d9fe77612b57/_metadata_/metadata_i" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/.idea/dataSources/cf2abce5-72d5-42e5-8cb2-d9fe77612b57/_metadata_/metadata_i.len" afterPath="$PROJECT_DIR$/../Server/.idea/dataSources/cf2abce5-72d5-42e5-8cb2-d9fe77612b57/_metadata_/metadata_i.len" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/out/production/Server/ForDataBase.class" afterPath="$PROJECT_DIR$/../Server/out/production/Server/ForDataBase.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/out/production/Server/MyComparator.class" afterPath="$PROJECT_DIR$/../Server/out/production/Server/MyComparator.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/out/production/Server/Person.class" afterPath="$PROJECT_DIR$/../Server/out/production/Server/Person.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/out/production/Server/Phrase.class" afterPath="$PROJECT_DIR$/../Server/out/production/Server/Phrase.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/out/production/Server/Server.class" afterPath="$PROJECT_DIR$/../Server/out/production/Server/Server.class" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/out/production/Server/ThreadForManyClients.class" afterPath="$PROJECT_DIR$/../Server/out/production/Server/ThreadForManyClients.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Client.java" afterPath="$PROJECT_DIR$/src/Client.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Main.java" afterPath="$PROJECT_DIR$/src/Main.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Person.java" afterPath="$PROJECT_DIR$/src/Person.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Phrase.java" afterPath="$PROJECT_DIR$/src/Phrase.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ThreadForClient.java" afterPath="$PROJECT_DIR$/src/ThreadForClient.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/.idea/dataSources/cf2abce5-72d5-42e5-8cb2-d9fe77612b57.xml" afterPath="$PROJECT_DIR$/../Server/.idea/dataSources/cf2abce5-72d5-42e5-8cb2-d9fe77612b57.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/.idea/workspace.xml" afterPath="$PROJECT_DIR$/../Server/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/src/DataVector.java" afterPath="$PROJECT_DIR$/../Server/src/DataVector.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/src/ForDataBase.java" afterPath="$PROJECT_DIR$/../Server/src/ForDataBase.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/src/MyComparator.java" afterPath="$PROJECT_DIR$/../Server/src/MyComparator.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/src/Person.java" afterPath="$PROJECT_DIR$/../Server/src/Person.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/src/Phrase.java" afterPath="$PROJECT_DIR$/../Server/src/Phrase.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/src/Server.java" afterPath="$PROJECT_DIR$/../Server/src/Server.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Server/src/ThreadForManyClients.java" afterPath="$PROJECT_DIR$/../Server/src/ThreadForManyClients.java" />
     </list>
@@ -76,21 +95,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Message.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/forGUI/Message.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="53">
-              <caret line="147" column="67" lean-forward="false" selection-start-line="147" selection-start-column="67" selection-end-line="147" selection-end-column="67" />
+            <state relative-caret-position="155">
+              <caret line="517" column="34" lean-forward="false" selection-start-line="517" selection-start-column="34" selection-end-line="517" selection-end-column="34" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -98,16 +107,55 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Person.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ButtonAction.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/forGUI/ButtonAction.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="187">
+              <caret line="14" column="29" lean-forward="false" selection-start-line="12" selection-start-column="7" selection-end-line="14" selection-end-column="29" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InteractiveTextField.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/forGUI/InteractiveTextField.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Client.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Client.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="16" column="35" lean-forward="false" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ThreadForClient.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/ThreadForClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="32" column="93" lean-forward="false" selection-start-line="32" selection-start-column="93" selection-end-line="32" selection-end-column="93" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Person.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Person.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="41" column="5" lean-forward="false" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+            <state relative-caret-position="1343">
+              <caret line="102" column="1" lean-forward="false" selection-start-line="102" selection-start-column="1" selection-end-line="102" selection-end-column="1" />
               <folding>
-                <element signature="e#816#817#0" expanded="true" />
-                <element signature="e#844#845#0" expanded="true" />
-                <element signature="e#1102#1103#0" expanded="true" />
-                <element signature="e#1147#1148#0" expanded="true" />
+                <element signature="imports" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -116,8 +164,38 @@
       <file leaf-file-name="Phrase.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Phrase.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+            <state relative-caret-position="221">
+              <caret line="22" column="1" lean-forward="false" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#310#311#0" expanded="true" />
+                <element signature="e#346#347#0" expanded="true" />
+                <element signature="e#393#394#0" expanded="true" />
+                <element signature="e#427#428#0" expanded="true" />
+                <element signature="e#460#461#0" expanded="true" />
+                <element signature="e#489#490#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Probnik.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Probnik.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="204">
+              <caret line="21" column="68" lean-forward="false" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MyLoc.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/MyLoc.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="8" column="10" lean-forward="false" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
               <folding />
             </state>
           </provider>
@@ -139,6 +217,11 @@
     <findStrings>
       <find>compareTo</find>
       <find>update</find>
+      <find>Hung</find>
+      <find>Canada</find>
+      <find>Ott</find>
+      <find>Bud</find>
+      <find>name</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -152,28 +235,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/PHR.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/1713255a-c379-4f99-9b9e-bc85b13027dd/console_1.sql" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/3abdfd72-ac4d-46f5-8417-30efd7937b70/console.sql" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/1713255a-c379-4f99-9b9e-bc85b13027dd/console.sql" />
-        <option value="$PROJECT_DIR$/src/Speaker.java" />
-        <option value="$PROJECT_DIR$/src/JavaFXSkel.java" />
-        <option value="$PROJECT_DIR$/src/OverView.fxml" />
-        <option value="$PROJECT_DIR$/src/Overview.fxml" />
-        <option value="$PROJECT_DIR$/src/MyOverview.fxml" />
-        <option value="$PROJECT_DIR$/src/PaneLeftUp.java" />
-        <option value="$PROJECT_DIR$/src/PaneRightDown.java" />
-        <option value="$PROJECT_DIR$/src/PaneUp.java" />
-        <option value="$PROJECT_DIR$/src/TVPerson.java" />
-        <option value="$PROJECT_DIR$/src/ButtonAction.java" />
-        <option value="$PROJECT_DIR$/src/ForImages.java" />
-        <option value="$PROJECT_DIR$/src/Images.java" />
-        <option value="$PROJECT_DIR$/src/MyImage.java" />
-        <option value="$PROJECT_DIR$/src/MyImageView.java" />
-        <option value="$PROJECT_DIR$/src/RBForImages.java" />
-        <option value="$PROJECT_DIR$/src/ReadWrite.java" />
-        <option value="$PROJECT_DIR$/src/Phrase.java" />
-        <option value="$PROJECT_DIR$/src/ButtonForUpdate.java" />
         <option value="$PROJECT_DIR$/src/Message.java" />
         <option value="$PROJECT_DIR$/src/InteractiveTextField.java" />
         <option value="$PROJECT_DIR$/src/ButtonExit.java" />
@@ -183,26 +244,48 @@
         <option value="$PROJECT_DIR$/src/Server.java" />
         <option value="$PROJECT_DIR$/src/ForDataBase.java" />
         <option value="$PROJECT_DIR$/src/ThreadForManyClients.java" />
-        <option value="$PROJECT_DIR$/src/DataVector.java" />
         <option value="$PROJECT_DIR$/src/PaneDown.java" />
         <option value="$PROJECT_DIR$/src/Root.java" />
-        <option value="$PROJECT_DIR$/src/forGUI/ButtonAction.java" />
         <option value="$PROJECT_DIR$/src/forGUI/ButtonExit.java" />
+        <option value="$PROJECT_DIR$/src/people/DataVector.java" />
+        <option value="$PROJECT_DIR$/src/people/Person.java" />
+        <option value="$PROJECT_DIR$/src/people/Phrase.java" />
+        <option value="$PROJECT_DIR$/src/laba7/Client.java" />
+        <option value="$PROJECT_DIR$/src/laba7/DataVector.java" />
+        <option value="$PROJECT_DIR$/src/laba7/Person.java" />
+        <option value="$PROJECT_DIR$/src/laba7/Phrase.java" />
+        <option value="$PROJECT_DIR$/src/laba7/forGUI/ButtonAction.java" />
+        <option value="$PROJECT_DIR$/src/laba7/forGUI/ButtonForUpdate.java" />
+        <option value="$PROJECT_DIR$/src/laba7/forGUI/ForButtonInteractive.java" />
+        <option value="$PROJECT_DIR$/src/laba7/forGUI/InteractiveTextField.java" />
+        <option value="$PROJECT_DIR$/src/laba7/forGUI/Message.java" />
+        <option value="$PROJECT_DIR$/src/laba7/forGUI/MyImageView.java" />
+        <option value="$PROJECT_DIR$/src/laba7/forGUI/PaneDown.java" />
+        <option value="$PROJECT_DIR$/src/laba7/forGUI/RBForImages.java" />
+        <option value="$PROJECT_DIR$/src/laba7/forGUI/Root.java" />
+        <option value="$PROJECT_DIR$/src/laba7/ThreadForClient.java" />
+        <option value="$PROJECT_DIR$/src/laba7/forGUI/GUI.java" />
+        <option value="$PROJECT_DIR$/src/laba7/Main.java" />
+        <option value="$PROJECT_DIR$/src/forGUI/ButtonAction.java" />
         <option value="$PROJECT_DIR$/src/forGUI/ButtonForUpdate.java" />
         <option value="$PROJECT_DIR$/src/forGUI/ForButtonInteractive.java" />
         <option value="$PROJECT_DIR$/src/forGUI/InteractiveTextField.java" />
         <option value="$PROJECT_DIR$/src/forGUI/Message.java" />
         <option value="$PROJECT_DIR$/src/forGUI/MyImageView.java" />
+        <option value="$PROJECT_DIR$/src/forGUI/PaneDown.java" />
         <option value="$PROJECT_DIR$/src/forGUI/RBForImages.java" />
         <option value="$PROJECT_DIR$/src/forGUI/Root.java" />
-        <option value="$PROJECT_DIR$/src/people/DataVector.java" />
-        <option value="$PROJECT_DIR$/src/people/Person.java" />
-        <option value="$PROJECT_DIR$/src/people/Phrase.java" />
+        <option value="$PROJECT_DIR$/src/DataVector.java" />
+        <option value="$PROJECT_DIR$/src/forGUI/GUI.java" />
+        <option value="$PROJECT_DIR$/src/MyLoc.java" />
+        <option value="$PROJECT_DIR$/src/Probnik.java" />
+        <option value="$PROJECT_DIR$/resources/texts/zpz_ru_RU.properties" />
+        <option value="$PROJECT_DIR$/resources/texts/zpz.properties" />
         <option value="$PROJECT_DIR$/src/ThreadForClient.java" />
         <option value="$PROJECT_DIR$/src/Client.java" />
-        <option value="$PROJECT_DIR$/src/forGUI/PaneDown.java" />
-        <option value="$PROJECT_DIR$/src/Main.java" />
+        <option value="$PROJECT_DIR$/src/Phrase.java" />
         <option value="$PROJECT_DIR$/src/Person.java" />
+        <option value="$PROJECT_DIR$/src/Main.java" />
       </list>
     </option>
   </component>
@@ -219,7 +302,8 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
+    <option name="x" value="-27" />
+    <option name="y" value="5" />
     <option name="width" value="697" />
     <option name="height" value="735" />
   </component>
@@ -239,9 +323,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
-      <pane id="AndroidView" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -253,7 +334,7 @@
             <path>
               <item name="New7" type="b2602c69:ProjectViewProjectNode" />
               <item name="New7" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="New7" type="b2602c69:ProjectViewProjectNode" />
@@ -270,10 +351,13 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Client" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Server" />
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -299,23 +383,14 @@
     </option>
   </component>
   <component name="RunManager" selected="Application.Main">
-    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="Client" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="New6" />
-      <envs />
-    </configuration>
-    <configuration name="JavaFXSkel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="JavaFXSkel" />
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="laba7.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="MAIN_CLASS_NAME" value="laba7.Main" />
       <option name="VM_PARAMETERS" />
       <option name="PROGRAM_PARAMETERS" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
@@ -333,6 +408,20 @@
       <option name="VM_PARAMETERS" value="" />
       <option name="PROGRAM_PARAMETERS" value="..\..\Proba.csv" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="ENABLE_SWING_INSPECTOR" value="false" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <module name="New6" />
+      <envs />
+    </configuration>
+    <configuration name="Probnik" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="MAIN_CLASS_NAME" value="Probnik" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
       <option name="ALTERNATIVE_JRE_PATH" />
       <option name="ENABLE_SWING_INSPECTOR" value="false" />
@@ -749,18 +838,18 @@
     </configuration>
     <list size="5">
       <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-      <item index="1" class="java.lang.String" itemvalue="Application.JavaFXSkel" />
-      <item index="2" class="java.lang.String" itemvalue="Application.Client" />
-      <item index="3" class="java.lang.String" itemvalue="Application.Server" />
-      <item index="4" class="java.lang.String" itemvalue="Application.ServerOld" />
+      <item index="1" class="java.lang.String" itemvalue="Application.Server" />
+      <item index="2" class="java.lang.String" itemvalue="Application.ServerOld" />
+      <item index="3" class="java.lang.String" itemvalue="Application.Main (1)" />
+      <item index="4" class="java.lang.String" itemvalue="Application.Probnik" />
     </list>
     <recent_temporary>
       <list size="5">
         <item index="0" class="java.lang.String" itemvalue="Application.Main" />
-        <item index="1" class="java.lang.String" itemvalue="Application.Server" />
-        <item index="2" class="java.lang.String" itemvalue="Application.ServerOld" />
-        <item index="3" class="java.lang.String" itemvalue="Application.Client" />
-        <item index="4" class="java.lang.String" itemvalue="Application.JavaFXSkel" />
+        <item index="1" class="java.lang.String" itemvalue="Application.Probnik" />
+        <item index="2" class="java.lang.String" itemvalue="Application.Main (1)" />
+        <item index="3" class="java.lang.String" itemvalue="Application.Server" />
+        <item index="4" class="java.lang.String" itemvalue="Application.ServerOld" />
       </list>
     </recent_temporary>
   </component>
@@ -818,12 +907,26 @@
       <workItem from="1505287632350" duration="1874000" />
       <workItem from="1505307228083" duration="20964000" />
       <workItem from="1505375431289" duration="20737000" />
-      <workItem from="1505407104386" duration="24755000" />
+      <workItem from="1505407104386" duration="25135000" />
+      <workItem from="1505459514530" duration="1405000" />
+      <workItem from="1506009799479" duration="11883000" />
+      <workItem from="1506052859437" duration="4481000" />
+      <workItem from="1506079303287" duration="2165000" />
+      <workItem from="1506265124981" duration="672000" />
+      <workItem from="1507803692119" duration="27044000" />
+      <workItem from="1507892075834" duration="6421000" />
+      <workItem from="1507981282696" duration="19304000" />
+      <workItem from="1508103946129" duration="6950000" />
+      <workItem from="1508131027662" duration="171000" />
+      <workItem from="1508131309761" duration="336000" />
+      <workItem from="1508131701589" duration="235000" />
+      <workItem from="1508132213674" duration="224000" />
+      <workItem from="1508236729660" duration="1019000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="390132000" />
+    <option name="totallyTimeSpent" value="472822000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -847,12 +950,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17512275" sideWeight="0.51059" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852808" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.46217105" sideWeight="0.48940998" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25822368" sideWeight="0.48940998" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.375" sideWeight="0.4941435" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40460527" sideWeight="0.4939302" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16792738" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.120272316" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19440243" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -867,40 +969,9 @@
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40460527" sideWeight="0.4939302" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19365609" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
-    <layout-to-restore>
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Nl-Palette" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.17512275" sideWeight="0.51059" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32852808" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19440243" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39802632" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29605263" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14638157" sideWeight="0.48940998" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.375" sideWeight="0.4941435" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Database Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40460527" sideWeight="0.4939302" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16792738" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.19365609" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="true" content_ui="tabs" />
-    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -919,255 +990,64 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ReadWrite.java" />
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/javafx-src.zip!/javafx/event/EventHandler.java">
+    <entry file="file://$PROJECT_DIR$/src/RBForImages.java" />
+    <entry file="file://$PROJECT_DIR$/src/Root.java" />
+    <entry file="file://$PROJECT_DIR$/src/people/DataVector.java" />
+    <entry file="file://$PROJECT_DIR$/src/people/Person.java" />
+    <entry file="file://$PROJECT_DIR$/src/people/Phrase.java" />
+    <entry file="file://$PROJECT_DIR$/src/forGUI/ButtonExit.java" />
+    <entry file="file://$PROJECT_DIR$/src/laba7/DataVector.java" />
+    <entry file="file://$PROJECT_DIR$/src/laba7/Person.java" />
+    <entry file="file://$PROJECT_DIR$/src/laba7/Phrase.java" />
+    <entry file="file://$PROJECT_DIR$/src/laba7/forGUI/ButtonAction.java" />
+    <entry file="file://$PROJECT_DIR$/src/laba7/forGUI/ButtonForUpdate.java" />
+    <entry file="file://$PROJECT_DIR$/src/laba7/forGUI/ForButtonInteractive.java" />
+    <entry file="file://$PROJECT_DIR$/src/laba7/forGUI/InteractiveTextField.java" />
+    <entry file="file://$PROJECT_DIR$/src/laba7/forGUI/Message.java" />
+    <entry file="file://$PROJECT_DIR$/src/laba7/forGUI/MyImageView.java" />
+    <entry file="file://$PROJECT_DIR$/src/laba7/forGUI/PaneDown.java" />
+    <entry file="file://$PROJECT_DIR$/src/laba7/forGUI/RBForImages.java" />
+    <entry file="file://$PROJECT_DIR$/src/laba7/forGUI/Root.java" />
+    <entry file="file://$PROJECT_DIR$/src/laba7/Client.java" />
+    <entry file="file://$PROJECT_DIR$/src/laba7/ThreadForClient.java" />
+    <entry file="file://$PROJECT_DIR$/src/laba7/forGUI/GUI.java" />
+    <entry file="file://$PROJECT_DIR$/src/laba7/Main.java" />
+    <entry file="file://$PROJECT_DIR$/src/forGUI/GUI.java" />
+    <entry file="file://F:/lab4/Boy.java" />
+    <entry file="file://F:/lab4/DimensionInterface.java" />
+    <entry file="file://F:/lab4/Element.java" />
+    <entry file="file://F:/lab4/Home.java" />
+    <entry file="file://F:/lab4/Human.java" />
+    <entry file="file://F:/lab4/Position.java" />
+    <entry file="file://F:/lab4/ProjectAttitudeV2.java" />
+    <entry file="file://F:/lab4/State.java" />
+    <entry file="file://F:/lab4/Suitcase.java" />
+    <entry file="file://$PROJECT_DIR$/src/MyLoc.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="44" column="9" lean-forward="false" selection-start-line="44" selection-start-column="9" selection-end-line="44" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PaneUp.java" />
-    <entry file="file://$PROJECT_DIR$/src/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="36" lean-forward="false" selection-start-line="9" selection-start-column="8" selection-end-line="9" selection-end-column="36" />
+        <state relative-caret-position="136">
+          <caret line="8" column="10" lean-forward="false" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ButtonExit.java">
+    <entry file="file://$PROJECT_DIR$/src/forGUI/ButtonForUpdate.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="32" lean-forward="false" selection-start-line="10" selection-start-column="32" selection-end-line="10" selection-end-column="32" />
+        <state relative-caret-position="0">
+          <caret line="0" column="15" lean-forward="true" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ButtonForUpdate.java">
+    <entry file="file://$PROJECT_DIR$/src/forGUI/ForButtonInteractive.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="29" lean-forward="false" selection-start-line="7" selection-start-column="29" selection-end-line="7" selection-end-column="29" />
-          <folding />
+        <state relative-caret-position="51">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ForButtonInteractive.java">
+    <entry file="file://$PROJECT_DIR$/src/forGUI/Message.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/InteractiveTextField.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="30" lean-forward="true" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../For Il'ya/PaneDown.java" />
-    <entry file="file://$PROJECT_DIR$/../../For Il'ya/PaneUp.java" />
-    <entry file="file://$PROJECT_DIR$/../../For Il'ya/Person.java" />
-    <entry file="file://$PROJECT_DIR$/../../For Il'ya/Phrase.java" />
-    <entry file="file://$PROJECT_DIR$/../../For Il'ya/Root.java" />
-    <entry file="file://$PROJECT_DIR$/../../For Il'ya/Server.java" />
-    <entry file="file://$PROJECT_DIR$/../../For Il'ya/ButtonAction.java" />
-    <entry file="file://$PROJECT_DIR$/../../For Il'ya/Client.java" />
-    <entry file="file://$PROJECT_DIR$/../../For Il'ya/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/ButtonAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
+        <state relative-caret-position="51">
           <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/io/OutputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="61" column="25" lean-forward="false" selection-start-line="61" selection-start-column="25" selection-end-line="61" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/net/Socket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="851" column="25" lean-forward="false" selection-start-line="851" selection-start-column="25" selection-end-line="851" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="168" column="0" lean-forward="false" selection-start-line="168" selection-start-column="0" selection-end-line="168" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/af2a4fe8-15b5-4f2c-8b60-d4a16e5eed71/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="21" column="15" lean-forward="false" selection-start-line="21" selection-start-column="15" selection-end-line="21" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ForDataBase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="34" column="9" lean-forward="false" selection-start-line="34" selection-start-column="9" selection-end-line="34" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThreadForManyClients.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="25" lean-forward="true" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Server.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="22" column="102" lean-forward="false" selection-start-line="22" selection-start-column="102" selection-end-line="22" selection-end-column="102" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/util/Vector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="380" column="15" lean-forward="false" selection-start-line="380" selection-start-column="15" selection-end-line="380" selection-end-column="15" />
-          <folding>
-            <element signature="e#14072#14073#0" expanded="false" />
-            <element signature="e#14108#14109#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/src.zip!/java/io/ObjectInputStream.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="282">
-          <caret line="375" column="26" lean-forward="false" selection-start-line="375" selection-start-column="15" selection-end-line="375" selection-end-column="26" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://table:/576d1cf0/af2a4fe8-15b5-4f2c-8b60-d4a16e5eed71/postgres.public.person">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_101/javafx-src.zip!/javafx/scene/layout/Region.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="1045" column="7" lean-forward="false" selection-start-line="1045" selection-start-column="7" selection-end-line="1047" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/PaneDown.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="19" lean-forward="false" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/RBForImages.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="9" column="33" lean-forward="true" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Root.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="29" lean-forward="false" selection-start-line="10" selection-start-column="29" selection-end-line="10" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/people/DataVector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/people/Person.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="2" column="3" lean-forward="false" selection-start-line="2" selection-start-column="3" selection-end-line="2" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/people/Phrase.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ThreadForClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="69" column="21" lean-forward="true" selection-start-line="69" selection-start-column="21" selection-end-line="69" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Client.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="63" column="59" lean-forward="false" selection-start-line="63" selection-start-column="59" selection-end-line="63" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DataVector.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="15" column="1" lean-forward="false" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/forGUI/Root.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/forGUI/RBForImages.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/forGUI/PaneDown.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="6" column="19" lean-forward="false" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1175,6 +1055,72 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/forGUI/PaneDown.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/forGUI/RBForImages.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="7" column="13" lean-forward="false" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/forGUI/Root.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="13" lean-forward="false" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DataVector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="28" lean-forward="true" selection-start-line="3" selection-start-column="12" selection-end-line="3" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Probnik.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="21" column="68" lean-forward="false" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/texts/zpz.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="62" column="37" lean-forward="false" selection-start-line="62" selection-start-column="37" selection-end-line="62" selection-end-column="37" />
+        </state>
+      </provider>
+      <provider editor-type-id="ResourceBundle">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/texts/zpz_ru_RU.properties">
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="15" lean-forward="false" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="ResourceBundle">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ThreadForClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="32" column="93" lean-forward="false" selection-start-line="32" selection-start-column="93" selection-end-line="32" selection-end-column="93" />
           <folding />
         </state>
       </provider>
@@ -1187,75 +1133,56 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/forGUI/ForButtonInteractive.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/forGUI/ButtonForUpdate.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="4" column="13" lean-forward="false" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/forGUI/ButtonExit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/forGUI/ButtonAction.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/forGUI/Message.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Phrase.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="53">
-          <caret line="147" column="67" lean-forward="false" selection-start-line="147" selection-start-column="67" selection-end-line="147" selection-end-column="67" />
+        <state relative-caret-position="221">
+          <caret line="22" column="1" lean-forward="false" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#310#311#0" expanded="true" />
+            <element signature="e#346#347#0" expanded="true" />
+            <element signature="e#393#394#0" expanded="true" />
+            <element signature="e#427#428#0" expanded="true" />
+            <element signature="e#460#461#0" expanded="true" />
+            <element signature="e#489#490#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/Person.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="41" column="5" lean-forward="false" selection-start-line="41" selection-start-column="5" selection-end-line="41" selection-end-column="5" />
+        <state relative-caret-position="1343">
+          <caret line="102" column="1" lean-forward="false" selection-start-line="102" selection-start-column="1" selection-end-line="102" selection-end-column="1" />
           <folding>
-            <element signature="e#816#817#0" expanded="true" />
-            <element signature="e#844#845#0" expanded="true" />
-            <element signature="e#1102#1103#0" expanded="true" />
-            <element signature="e#1147#1148#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Client.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="16" column="35" lean-forward="false" selection-start-line="16" selection-start-column="35" selection-end-line="16" selection-end-column="35" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/forGUI/ButtonAction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="14" column="29" lean-forward="false" selection-start-line="12" selection-start-column="7" selection-end-line="14" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="517" column="34" lean-forward="false" selection-start-line="517" selection-start-column="34" selection-end-line="517" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,8 +1,16 @@
 import java.io.*;
 import java.net.InetAddress;
+import java.text.MessageFormat;
+import java.time.ZoneId;
+import java.time.zone.ZoneRules;
+import java.util.*;
+import java.util.stream.Collectors;
+
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
 import javafx.application.Application;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.geometry.*;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -14,7 +22,6 @@ import forGUI.*;
 
 /**
  * @author Elisa, P3111
- * @version 1.0
  */
 
 public class Main extends Application {
@@ -27,48 +34,106 @@ public class Main extends Application {
     private static PaneDown pane11 = new PaneDown();
     private static Message message = new Message("", 15, 420);
     private static Message messageForMin = new Message("min = " + minPerson, 15, 440);
-    private ButtonAction updateButton = new ButtonAction("Обновить элемент", 15, 170);
-    private ButtonAction removeLastButton = new ButtonAction("Удалить последний", 15, 210);
-    private ButtonAction removeButton = new ButtonAction("Удалить (по индексу)", 15, 250);
-    private ButtonAction addIfMinButton = new ButtonAction("Добавить, если меньше", 15, 290);
+    private ButtonAction updateButton = new ButtonAction(client.getResBun().getString("update"), 15, 155);
+    private ButtonAction removeLastButton = new ButtonAction(client.getResBun().getString("remove_last"), 15, 195);
+    private ButtonAction removeButton = new ButtonAction(client.getResBun().getString("remove"), 15, 235);
+    private ButtonAction addIfMinButton = new ButtonAction(client.getResBun().getString("add_if_min"), 15, 275);
     private static TreeView<String> tvPerson = new TreeView<>();
     private static ButtonForUpdate nameRB;
     private static ButtonForUpdate phraseRB;
     private static InteractiveTextField interactiveTextField;
     private static FlowPane image = new FlowPane();
-    private static ForButtonInteractive enter = new ForButtonInteractive("Ввод",460, 230);
-    private static ForButtonInteractive closeInteractive = new ForButtonInteractive("Закрыть", 460, 270);
-    private static Button closeImage = new Button("Закрыть");
-
+    private ForButtonInteractive enter = new ForButtonInteractive(client.getResBun().getString("enter"),460, 230);
+    private ForButtonInteractive closeInteractive = new ForButtonInteractive(client.getResBun().getString("close"), 460, 270);
+    private Button closeImage = new Button(client.getResBun().getString("close"));
+    public static Message getMessage() { return message; }
 
 
     public void start(Stage stage) {
-        stage.setTitle("Лабораторная 07");
+        stage.setTitle(client.getResBun().getString("title"));
         root.add(pane00, 0, 0);
         root.add(pane01, 1, 0);
         root.add(pane10, 0, 1);
         root.add(pane11, 1, 1);
-        ButtonAction filterName = new ButtonAction("Отсортировать", 45, 420);
-        MyImageView imv1 = new MyImageView(new Image("/images/БольИСтрадания.jpg"));
-        MyImageView imv2 = new MyImageView(new Image("/images/Фичи.png"));
-        MyImageView imv3 = new MyImageView(new Image("/images/МурМур.jpg"));
+        ButtonAction sortName = new ButtonAction(client.getResBun().getString("sort_name"), 45, 420);
+        ButtonAction sortDate = new ButtonAction(client.getResBun().getString("sort_date"), 0, 0);
+        MyImageView imv1 = new MyImageView(new Image("/images/deadline.jpg"));
+        MyImageView imv2 = new MyImageView(new Image("/images/deadline2.jpg"));
+        MyImageView imv3 = new MyImageView(new Image("/images/deadline3.jpg"));
         MyImageView imv4 = new MyImageView(new Image("/images/СамыйЛучшийПреподавательНаСвете.jpg"));
-        Label iWant = new Label("Я хочу увидеть...");
+        Label iWant = new Label(client.getResBun().getString("i_want"));
         iWant.setTextFill(Color.DARKVIOLET);
         ToggleGroup tg = new ToggleGroup();
-        RBForImages rb1 = new RBForImages("сдачу лаб", tg, Color.DARKRED);
-        RBForImages rb2 = new RBForImages("истину жизни", tg, Color.DARKGOLDENROD);
-        RBForImages rb3 = new RBForImages("поздравление", tg, Color.DARKMAGENTA);
-        RBForImages rb4 = new RBForImages("взгляд в будущее", tg, Color.DARKBLUE);
+        RBForImages rb1 = new RBForImages(client.getResBun().getString("rb1"), tg, Color.DARKRED);
+        RBForImages rb2 = new RBForImages(client.getResBun().getString("rb2"), tg, Color.DARKGOLDENROD);
+        RBForImages rb3 = new RBForImages(client.getResBun().getString("rb3"), tg, Color.DARKMAGENTA);
+        RBForImages rb4 = new RBForImages(client.getResBun().getString("rb4"), tg, Color.DARKBLUE);
+        ButtonAction filter = new ButtonAction(client.getResBun().getString("filter"), 15, 315);
+        ComboBox comboBox = new ComboBox();
+        comboBox.getItems().addAll("English", "Russian", "Slovenian", "Hungarian");
+        comboBox.relocate(10, 10);
+        comboBox.setPromptText(client.getResBun().getString("change_lan"));
+        comboBox.valueProperty().addListener(event -> {
+                    switch (comboBox.getValue().toString()) {
+                        case "English":
+                            System.out.println(comboBox.getValue());
+                            client.setLocale(new Locale("en", "CA"));
+                            client.setResBun(ResourceBundle.getBundle("texts/all_phrases", client.getLocale()));
+                            client.setZoneId(ZoneId.of("Canada/Central"));
+                            break;
+                        case "Russian":
+                            System.out.println(comboBox.getValue());
+                            client.setLocale(new Locale("ru", "RU"));
+                            client.setResBun(ResourceBundle.getBundle("texts/all_phrases", client.getLocale()));
+                            client.setZoneId(ZoneId.of("Europe/Moscow"));
+                            break;
+                        case "Hungarian":
+                            System.out.println(comboBox.getValue());
+                            client.setLocale(new Locale("hu", "HU"));
+                            client.setResBun(ResourceBundle.getBundle("texts/all_phrases", client.getLocale()));
+                            client.setZoneId(ZoneId.of("Europe/Budapest"));
+                            break;
+                        case "Slovenian":
+                            System.out.println(comboBox.getValue());
+                            client.setLocale(new Locale("sl", "SI"));
+                            client.setResBun(ResourceBundle.getBundle("texts/all_phrases", client.getLocale()));
+                            client.setZoneId(ZoneId.of("Europe/Ljubljana"));
+                            break;
+                        default:
+                            System.out.println("BAD!!!");
+                    }
+
+                    String temp = client.getResBun().getString("min");
+                    String template = MessageFormat.format(temp, minPerson);
+                    messageForMin.setText(template);
+                    updateButton.setText(client.getResBun().getString("update"));
+                    removeLastButton.setText(client.getResBun().getString("remove_last"));
+                    removeButton.setText(client.getResBun().getString("remove"));
+                    addIfMinButton.setText(client.getResBun().getString("add_if_min"));
+                    enter.setText(client.getResBun().getString("enter"));
+                    closeInteractive.setText(client.getResBun().getString("close"));
+                    closeImage.setText(client.getResBun().getString("close"));
+                    stage.setTitle(client.getResBun().getString("title"));
+                    sortName.setText(client.getResBun().getString("sort_name"));
+                    sortDate.setText(client.getResBun().getString("sort_date"));
+                    filter.setText(client.getResBun().getString("filter"));
+                    iWant.setText(client.getResBun().getString("i_want"));
+                    rb1.setText(client.getResBun().getString("rb1"));
+                    rb2.setText(client.getResBun().getString("rb2"));
+                    rb3.setText(client.getResBun().getString("rb3"));
+                    rb4.setText(client.getResBun().getString("rb4"));
+                    comboBox.setPromptText(client.getResBun().getString("change_lan"));
+                    rewriting();
+        });
 
         updateButton.setOnAction(event -> {
-            checking();
+            checking(enter, closeInteractive);
             if (pane00.getChildren().contains(nameRB)) pane00.getChildren().remove(nameRB);
             if (pane00.getChildren().contains(phraseRB)) pane00.getChildren().remove(phraseRB);
-            interactiveTextField = new InteractiveTextField("Введите номер person");
+            interactiveTextField = new InteractiveTextField(client.getResBun().getString("enter_num_p"));
             pane00.getChildren().addAll(interactiveTextField, enter, closeInteractive);
-            enter.setOnAction(event1 -> updateAction());
-            interactiveTextField.setOnAction(event1 -> updateAction());
+            enter.setOnAction(event1 -> updateAction(enter));
+            interactiveTextField.setOnAction(event1 -> updateAction(enter));
             closeInteractive.setOnAction(event1 -> {
                 pane00.getChildren().removeAll(interactiveTextField, enter, closeInteractive);
                 if (pane00.getChildren().contains(nameRB)) pane00.getChildren().remove(nameRB);
@@ -76,26 +141,26 @@ public class Main extends Application {
             });
         });
         removeLastButton.setOnAction(event -> {
-            checking();
+            checking(enter, closeInteractive);
             if (!client.getVectorClient().isEmpty()) {
                 client.connectionWithServer("Update server");
                 client.sendDataVectorToServer(DataVector.DELETE, client.getVectorClient().lastElement());
                 client.getVectorClient().remove(client.getVectorClient().lastElement());
-                message.setText("Последний элемент удален");
+                message.setText(client.getResBun().getString("rl_done"));
                 getMin();
                 rewriting();
-            } else message.setText("Коллекция пустая");
+            } else message.setText(client.getResBun().getString("col_empty"));
         });
         removeButton.setOnAction(event -> {
-            checking();
-            interactiveTextField = new InteractiveTextField("Введите номер person");
+            checking(enter, closeInteractive);
+            interactiveTextField = new InteractiveTextField(client.getResBun().getString("enter_num_p"));
             pane00.getChildren().addAll(interactiveTextField, enter, closeInteractive);
             enter.setOnAction(event1 -> removeOnIndex(interactiveTextField));
             interactiveTextField.setOnAction(event1 -> removeOnIndex(interactiveTextField));
             closeInteractive.setOnAction(event1 -> pane00.getChildren().removeAll(interactiveTextField, enter, closeInteractive));
         });
         addIfMinButton.setOnAction(event -> {
-            checking();
+            checking(enter, closeInteractive);
             interactiveTextField = new InteractiveTextField("{name:\"name\";phrases:[{phrase:\"phrase\"};{...}]}");
             interactiveTextField.relocate(190, 230);
             interactiveTextField.setPrefColumnCount(22);
@@ -104,28 +169,56 @@ public class Main extends Application {
             interactiveTextField.setOnAction(event1 -> addIfMin(interactiveTextField));
             closeInteractive.setOnAction(event1 -> pane00.getChildren().removeAll(interactiveTextField, enter, closeInteractive));
         });
-        filterName.setOnAction(event -> {
-            for (int i = 0; i < client.getVectorClient().size()-1; i++) {
-                for (int j = i + 1; j < client.getVectorClient().size(); j++) {
-                    if (client.getVectorClient().get(i).compareTo(client.getVectorClient().get(j)) > 0) {
-                        Person ch1 = client.getVectorClient().get(i);
-                        client.getVectorClient().set(i, client.getVectorClient().get(j));
-                        client.getVectorClient().set(j, ch1);
-                    }
-                }
+        sortName.setOnAction(event -> {
+            List<Person> list = client.getVectorClient().stream().sorted().collect(Collectors.toList());
+            Vector<Person> vector = new Vector<>();
+            for (int i=0; i<list.size(); i++) {
+                vector.add(list.get(i));
             }
+            client.setVectorClient(vector);
             rewriting();
-            message.setText("Коллекция отсортирована по имени");
+            message.setText(client.getResBun().getString("col_sort_n"));
+        });
+        sortDate.setOnAction(event -> {
+            List<Person> list = client.getVectorClient().stream().sorted(new Person()).collect(Collectors.toList());
+            Vector<Person> vector = new Vector<>();
+            for (int i=0; i<list.size(); i++) {
+                vector.add(list.get(i));
+            }
+            client.setVectorClient(vector);
+            rewriting();
+            message.setText(client.getResBun().getString("col_sort_d"));
+        });
+        filter.setOnAction(event -> {
+            Vector<Person> vct = client.getVectorClient();
+            checking(enter, closeInteractive);
+            interactiveTextField = new InteractiveTextField("Filter");
+            pane00.getChildren().addAll(interactiveTextField, enter, closeInteractive);
+            enter.setOnAction(event1 -> {
+                beforeFilter(updateButton, removeLastButton, removeButton, addIfMinButton, true);
+                filter();
+            });
+            interactiveTextField.setOnAction(event1 -> {
+                beforeFilter(updateButton, removeLastButton, removeButton, addIfMinButton, true);
+                filter();
+            });
+            closeInteractive.setOnAction(event1 -> {
+                beforeFilter(updateButton, removeLastButton, removeButton, addIfMinButton, false);
+                pane00.getChildren().removeAll(interactiveTextField, enter, closeInteractive);
+                client.setVectorClient(vct);
+                getMin();
+                rewriting();
+            });
         });
 
-        rb1.setOnAction(event -> imagination(imv1, imv4, imv2, imv3));
-        rb2.setOnAction(event -> imagination(imv2, imv1, imv4, imv3));
-        rb3.setOnAction(event -> imagination(imv3, imv1, imv2, imv4));
-        rb4.setOnAction(event -> imagination(imv4, imv1, imv2, imv3));
-        pane00.getChildren().addAll(updateButton, removeLastButton, removeButton, addIfMinButton, message, messageForMin);
-        pane01.getChildren().addAll(tvPerson, filterName);
+        rb1.setOnAction(event -> imagination(imv1, imv4, imv2, imv3, closeImage));
+        rb2.setOnAction(event -> imagination(imv2, imv1, imv4, imv3, closeImage));
+        rb3.setOnAction(event -> imagination(imv3, imv1, imv2, imv4, closeImage));
+        rb4.setOnAction(event -> imagination(imv4, imv1, imv2, imv3, closeImage));
+        pane00.getChildren().addAll(comboBox, updateButton, removeLastButton, removeButton, addIfMinButton, filter, message, messageForMin);
+        pane01.getChildren().addAll(tvPerson, sortName);
         pane10.getChildren().addAll(iWant, rb1, rb2, rb3, rb4);
-        pane11.getChildren().add(new Message(" У меня девиз один: \n Код из фич непобедим :)", 0,0));
+        pane11.getChildren().addAll(sortDate);
         Scene scene = new Scene(root, 860, 550);
         stage.setScene(scene);
         stage.setMinWidth(874);
@@ -135,21 +228,39 @@ public class Main extends Application {
         stage.show();
     }
 
+    public static void beforeFilter(ButtonAction b1, ButtonAction b2, ButtonAction b3, ButtonAction b4, boolean b) {
+        b1.setDisable(b);
+        b2.setDisable(b);
+        b3.setDisable(b);
+        b4.setDisable(b);
+    }
 
-    /**
-     * Метод находит минимальный элемент в коллекции
-     */
+    public static void filter() {
+        List<Person> list = client.getVectorClient().stream().filter((s) -> s.getName().contains(interactiveTextField.getText())).collect(Collectors.toList());
+        Vector<Person> vector = new Vector<>();
+        for (int i=0; i<list.size(); i++) {
+            vector.add(list.get(i));
+        }
+        client.setVectorClient(vector);
+        rewriting();
+        message.setText(client.getResBun().getString("col_filt"));
+    }
+
     public static synchronized void getMin() {
         if (!client.getVectorClient().isEmpty()) {
             minPerson = client.getVectorClient().get(0);
             for (Person person : client.getVectorClient()) {
                 if (minPerson.compareTo(person) > 0) minPerson = person;
             }
-            messageForMin.setText("min = " + minPerson.toString());
+            String temp = client.getResBun().getString("min");
+            String template = MessageFormat.format(temp, minPerson.toString());
+            messageForMin.setText(template);
         } else {
-            message.setText("Коллекция пустая");
+            message.setText(client.getResBun().getString("col_empty"));
             minPerson = null;
-            messageForMin.setText("min = null");
+            String temp = client.getResBun().getString("min");
+            String template = MessageFormat.format(temp, "null");
+            messageForMin.setText(template);
         }
     }
 
@@ -158,21 +269,26 @@ public class Main extends Application {
      */
     public static synchronized void rewriting() {
         pane01.getChildren().remove(tvPerson);
-        TreeItem<String> tiRoot = new TreeItem<>("Persons");
+        TreeItem<String> tiRoot = new TreeItem<>(client.getResBun().getString("persons"));
         for (int i = 0; i < client.getVectorClient().size(); i++) {
-            TreeItem<String> tiPerson = new TreeItem<>("Person " + (i + 1));
+            String temp = client.getResBun().getString("person");
+            String template = MessageFormat.format(temp, (i+1));
+            TreeItem<String> tiPerson = new TreeItem<>(template);
             tiRoot.getChildren().add(tiPerson);
-            TreeItem<String> tiName = new TreeItem<>("Name");
+            TreeItem<String> tiName = new TreeItem<>(client.getResBun().getString("name"));
             tiPerson.getChildren().add(tiName);
             tiName.getChildren().add(new TreeItem<>(client.getVectorClient().get(i).getName()));
+            TreeItem<String> tiTime = new TreeItem<>(client.getResBun().getString("date_time"));
+            tiPerson.getChildren().add(tiTime);
+            tiTime.getChildren().add(new TreeItem<>(client.getVectorClient().get(i).getTime(client.getLocale())));
             if (!client.getVectorClient().get(i).getPhrases().isEmpty()) {
-                TreeItem<String> tiPhrases = new TreeItem<>("Phrases");
+                TreeItem<String> tiPhrases = new TreeItem<>(client.getResBun().getString("phrases"));
                 tiPerson.getChildren().add(tiPhrases);
                 for (int j = 0; j < client.getVectorClient().get(i).getPhrases().size(); j++) {
-                    TreeItem<String> tiPhrase = new TreeItem<>("Phrase " + (j + 1));
+                    TreeItem<String> tiPhrase = new TreeItem<>(client.getResBun().getString("phr") + (j+1));
                     tiPhrases.getChildren().add(tiPhrase);
                     if (client.getVectorClient().get(i).getPhrases().get(j).getPhrase().isEmpty()) {
-                        tiPhrase.getChildren().add(new TreeItem<>("I was silent!"));
+                        tiPhrase.getChildren().add(new TreeItem<>(client.getResBun().getString("silent")));
                     } else
                         tiPhrase.getChildren().add(new TreeItem<>(client.getVectorClient().get(i).getPhrases().get(j).getPhrase()));
                 }
@@ -186,7 +302,7 @@ public class Main extends Application {
     /**
      * This command does checking.
      */
-    private static void checking() {
+    private static void checking(ForButtonInteractive enter, ForButtonInteractive closeInteractive) {
         if (pane00.getChildren().contains(interactiveTextField)) pane00.getChildren().remove(interactiveTextField);
         if (pane00.getChildren().contains(enter)) pane00.getChildren().remove(enter);
         if (pane00.getChildren().contains(closeInteractive)) pane00.getChildren().remove(closeInteractive);
@@ -201,7 +317,7 @@ public class Main extends Application {
      * @param c картинка, которую нужно удалить
      * @param d картинка, которую нужно удалить
      */
-    private static void imagination(ImageView a, ImageView b, ImageView c, ImageView d) {
+    private static void imagination(ImageView a, ImageView b, ImageView c, ImageView d, Button closeImage) {
         image.getChildren().removeAll(b, c, d);
         root.getChildren().remove(image);
         pane10.getChildren().remove(closeImage);
@@ -219,7 +335,7 @@ public class Main extends Application {
      * Метод предназначен для обновления какого-либо элемента коллекции, использую кнопку updateButton
      * Последующие три метода используются для недопущения повторного кода
      */
-    private static void updateAction() {
+    private static void updateAction(ForButtonInteractive enter) {
         try {
             Integer integer = new Integer(interactiveTextField.getText());
             integer--;
@@ -227,14 +343,14 @@ public class Main extends Application {
                 if (integer >= 0) {
                     int integerCopy = integer;
                     interactiveTextField.setText("");
-                    pane00.getChildren().remove(interactiveTextField);
                     ToggleGroup np = new ToggleGroup();
-                    nameRB = new ButtonForUpdate("Name", 250, 235, np);
-                    phraseRB = new ButtonForUpdate("Phrase", 250, 270, np);
+                    nameRB = new ButtonForUpdate(client.getResBun().getString("name"), 250, 235, np);
+                    phraseRB = new ButtonForUpdate(client.getResBun().getString("phr"), 250, 270, np);
+                    pane00.getChildren().remove(interactiveTextField);
                     pane00.getChildren().addAll(nameRB, phraseRB);
                     nameRB.setOnAction(event -> {
                                 pane00.getChildren().removeAll(nameRB, phraseRB);
-                                interactiveTextField.setPromptText("Введите имя");
+                                interactiveTextField.setPromptText(client.getResBun().getString("enter_name"));
                                 pane00.getChildren().add(interactiveTextField);
                                 enter.setOnAction(event1 -> forNameRB(integerCopy));
                                 interactiveTextField.setOnAction(event1 -> forNameRB(integerCopy));
@@ -243,34 +359,34 @@ public class Main extends Application {
                     phraseRB.setOnAction(event -> {
                                 pane00.getChildren().removeAll(nameRB, phraseRB);
                                 if (client.getVectorClient().get(integerCopy).getPhrases().isEmpty()) {
-                                    message.setText("У этого элемента нет фраз");
+                                    message.setText(client.getResBun().getString("no_phr"));
                                 } else {
-                                    interactiveTextField.setPromptText("Введите номер фразы");
+                                    interactiveTextField.setPromptText(client.getResBun().getString("enter_num_phr"));
                                     pane00.getChildren().add(interactiveTextField);
-                                    enter.setOnAction(event1 -> forPhraseRB(integerCopy)
+                                    enter.setOnAction(event1 -> forPhraseRB(integerCopy, enter)
                                     );
-                                    interactiveTextField.setOnAction(event1 -> forPhraseRB(integerCopy)
+                                    interactiveTextField.setOnAction(event1 -> forPhraseRB(integerCopy, enter)
                                     );
                                 }
                             }
                     );
                 } else {
-                    message.setText("Номер не может быть не положительным");
+                    message.setText(client.getResBun().getString("num_pos"));
                     interactiveTextField.setText("");
                 }
             } else {
-                message.setText("Слишком большой номер");
+                message.setText(client.getResBun().getString("num_big"));
                 interactiveTextField.setText("");
             }
         } catch (NumberFormatException e) {
-            message.setText("Чёт бред какой-то. Цифру плиз");
+            message.setText(client.getResBun().getString("nonsense"));
             interactiveTextField.setText("");
         }
     }
 
     private static void forNameRB (int integerCopy) {
         if(interactiveTextField.getText().trim().isEmpty()) {
-            message.setText("Имя не может быть пустым");
+            message.setText(client.getResBun().getString("nam_emp"));
         } else {
             client.getVectorClient().get(integerCopy).setName(interactiveTextField.getText().trim());
             interactiveTextField.setText("");
@@ -278,28 +394,28 @@ public class Main extends Application {
             client.sendDataVectorToServer(DataVector.UPDATE, client.getVectorClient().get(integerCopy));
             getMin();
             rewriting();
-            message.setText("Имя изменено");
+            message.setText(client.getResBun().getString("nam_update"));
         }
     }
 
-    private static void forPhraseRB(int a) {
+    private static void forPhraseRB(int a, ForButtonInteractive enter) {
         try {
             Integer int2 = new Integer(interactiveTextField.getText());
             int b = --int2;
             interactiveTextField.setText("");
             if (int2 < 0)
-                message.setText("Номер не может быть не положительным");
+                message.setText(client.getResBun().getString("num_pos"));
             else if (int2 >= client.getVectorClient().get(a).getPhrases().size())
-                message.setText("Слишком большой номер");
+                message.setText(client.getResBun().getString("num_big"));
             else {
                 pane00.getChildren().remove(interactiveTextField);
-                interactiveTextField.setPromptText("Введите фразу");
+                interactiveTextField.setPromptText(client.getResBun().getString("enter_phr"));
                 pane00.getChildren().add(interactiveTextField);
                 interactiveTextField.setOnAction(event2 -> forNewPhrase(a,b));
                 enter.setOnAction(event2 -> forNewPhrase(a,b));
             }
         } catch (NumberFormatException e) {
-            message.setText("Чёт вообще бред. Тут циферка должна быть");
+            message.setText(client.getResBun().getString("nonsense"));
             interactiveTextField.setText("");
         }
     }
@@ -311,7 +427,7 @@ public class Main extends Application {
         client.sendDataVectorToServer(DataVector.UPDATE, client.getVectorClient().get(a));
         getMin();
         rewriting();
-        message.setText("Фраза обновлена");
+        message.setText(client.getResBun().getString("phr_update"));
     }
 
     /**
@@ -321,27 +437,27 @@ public class Main extends Application {
         try {
             Integer index = new Integer(indexField.getText());
             if (client.getVectorClient().isEmpty()) {
-                message.setText("Коллекция пустая");
+                message.setText(client.getResBun().getString("col_empty"));
             } else {
                 if (index > client.getVectorClient().size()) {
-                    message.setText("Слишком большой номер");
+                    message.setText(client.getResBun().getString("num_big"));
                 } else {
                     if (index <= 0) {
-                        message.setText("Номер не может быть не положительным");
+                        message.setText(client.getResBun().getString("num_pos"));
                     } else {
                         client.connectionWithServer("Update server");
                         client.sendDataVectorToServer(DataVector.DELETE, client.getVectorClient().get(index-1));
                         client.getVectorClient().remove(index - 1);
                         getMin();
                         rewriting();
-                        message.setText("Удаление прошло успешно");
+                        message.setText(client.getResBun().getString("num_success"));
                     }
                 }
             }
             indexField.setText("");
         } catch (NumberFormatException e) {
-            if (indexField.getText().equals("")) message.setText("Надо бы что-нибудь написать...");
-            else message.setText("Мне кажется, стоит написать адекватную цифру");
+            if (indexField.getText().equals("")) message.setText(client.getResBun().getString("write_anyth"));
+            else message.setText(client.getResBun().getString("nonsense"));
             indexField.setText("");
         }
     }
@@ -357,41 +473,40 @@ public class Main extends Application {
                 if (minPerson == null) {
                     client.getVectorClient().addElement(person);
                     rewriting();
-                    person.setId(1);
+                    person.setId_per(1);
                     client.connectionWithServer("Update server");
                     client.sendDataVectorToServer(DataVector.ADD, person);
                     element.setText("");
-                    message.setText("Минимальный элемент добавлен");
+                    message.setText(client.getResBun().getString("min_add"));
                     minPerson = person;
-                    messageForMin.setText("min = " + minPerson.getName());
+                    String temp = client.getResBun().getString("min");
+                    String template = MessageFormat.format(temp, minPerson);
+                    messageForMin.setText(template);
                 } else {
                     if (minPerson.compareTo(person) > 0) {
                         minPerson = person;
                         int j = -1;
                         for (int i=0; i<client.getVectorClient().size(); i++) {
-                            if (client.getVectorClient().get(i).getId()>j) j = client.getVectorClient().get(i).getId();
+                            if (client.getVectorClient().get(i).getId_per()>j) j = client.getVectorClient().get(i).getId_per();
                         }
-                        person.setId(j+1);
+                        person.setId_per(j+1);
                         client.getVectorClient().addElement(person);
                         rewriting();
                         client.connectionWithServer("Update server");
                         client.sendDataVectorToServer(DataVector.ADD, person);
                         element.setText("");
-                        message.setText("Минимальный элемент добавлен");
-                        messageForMin.setText("min = " + minPerson.getName());
+                        message.setText(client.getResBun().getString("min_add"));
+                        messageForMin.setText("min = " + minPerson.toString());
                     } else {
-                        message.setText("Этот элемент не меньше минимального");
+                        message.setText(client.getResBun().getString("min_not_min"));
                         element.setText("");
                     }
                 }
             } else {
-                message.setText("Имя не может быть пустым");
+                message.setText(client.getResBun().getString("nam_emp"));
             }
         } catch (JsonSyntaxException e) {
-            message.setText("Это не формат JSON");
-        } catch (NullPointerException e) {
-            message.setText("Sorry, null cannot be here");
-            element.setText("");
+            message.setText(client.getResBun().getString("not_json"));
         }
     }
 
@@ -404,7 +519,6 @@ public class Main extends Application {
             tfc = new ThreadForClient(client);
             tfc.start();
             tfc.setName("Thread For Client");
-            message.setText("Коллекция обновлена по новым изменениям");
             launch(args);
             client.bool = true;
             client.connectionWithServer("esc");
@@ -412,7 +526,7 @@ public class Main extends Application {
             System.exit(0);
         } catch (IOException e) {
             tfc.interrupt();
-            System.out.println("Сервер отключился");
+            System.out.println(client.getResBun().getString("serv_not_work"));
             System.exit(666);
         }
     }

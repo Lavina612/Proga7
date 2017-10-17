@@ -54,6 +54,8 @@ public class ThreadForManyClients extends Thread {
             listOfThreads.remove(this);
         } catch (SQLException e) {
             System.out.println("Какая-то проблема с БД");
+        } catch (NullPointerException e) {
+            System.out.println("Ошибка считывания строки из-за ошибки с клиентом");
         }
     }
 
@@ -78,9 +80,7 @@ public class ThreadForManyClients extends Thread {
         try {
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
             obOutput = new ObjectOutputStream(baos);
-            System.out.println(dv);
             obOutput.writeObject(dv);
-            System.out.println(dv);
             obOutput.flush();
             baos.flush();
             out.write((int)Math.ceil((double)baos.size()/512.0));

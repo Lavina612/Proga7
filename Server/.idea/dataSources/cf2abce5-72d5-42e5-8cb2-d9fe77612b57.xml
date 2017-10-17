@@ -9,8 +9,8 @@
     </database>
     <schema id="3" parent="2" name="public">
       <ObjectId>2200</ObjectId>
-      <IntrospectionTimestamp>2017-09-15.00:01:10.788</IntrospectionTimestamp>
-      <IntrospectionStateNumber>680</IntrospectionStateNumber>
+      <IntrospectionTimestamp>2017-10-17.13:54:03.479</IntrospectionTimestamp>
+      <IntrospectionStateNumber>899</IntrospectionStateNumber>
       <Current>1</Current>
       <Visible>1</Visible>
     </schema>
@@ -30,65 +30,67 @@
       <ObjectId>11480</ObjectId>
     </schema>
     <table id="9" parent="3" name="person">
-      <ObjectId>16393</ObjectId>
-      <StateNumber>680</StateNumber>
+      <ObjectId>24605</ObjectId>
+      <StateNumber>899</StateNumber>
     </table>
     <table id="10" parent="3" name="phrase">
-      <ObjectId>16403</ObjectId>
-      <StateNumber>680</StateNumber>
+      <ObjectId>24613</ObjectId>
+      <StateNumber>899</StateNumber>
     </table>
     <column id="11" parent="9" name="id_per">
       <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>678</StateNumber>
+      <StateNumber>898</StateNumber>
     </column>
     <column id="12" parent="9" name="name">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>678</StateNumber>
+      <StateNumber>898</StateNumber>
     </column>
-    <index id="13" parent="9" name="person_pkey">
-      <ObjectId>16396</ObjectId>
+    <column id="13" parent="9" name="time">
+      <Position>3</Position>
+      <DataType>text|0</DataType>
+      <StateNumber>898</StateNumber>
+    </column>
+    <index id="14" parent="9" name="person_pkey">
+      <ObjectId>24611</ObjectId>
       <ColNames>id_per</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="14" parent="9" name="person_pkey">
-      <ObjectId>16397</ObjectId>
+    <key id="15" parent="9" name="person_pkey">
+      <ObjectId>24612</ObjectId>
       <ColNames>id_per</ColNames>
       <UnderlyingIndexName>person_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <column id="15" parent="10" name="phrase">
-      <Position>1</Position>
-      <DataType>varchar(50)|0</DataType>
-      <NotNull>1</NotNull>
-      <StateNumber>680</StateNumber>
-    </column>
     <column id="16" parent="10" name="id_per">
-      <Position>2</Position>
+      <Position>1</Position>
       <DataType>integer|0</DataType>
       <NotNull>1</NotNull>
-      <StateNumber>680</StateNumber>
+      <StateNumber>899</StateNumber>
     </column>
-    <index id="17" parent="10" name="phrase_pkey">
-      <ObjectId>16406</ObjectId>
-      <ColNames>phrase
-id_per</ColNames>
+    <column id="17" parent="10" name="phrase">
+      <Position>2</Position>
+      <DataType>text|0</DataType>
+      <StateNumber>899</StateNumber>
+    </column>
+    <index id="18" parent="10" name="phrase_pkey">
+      <ObjectId>24619</ObjectId>
+      <ColNames>id_per</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="18" parent="10" name="phrase_pkey">
-      <ObjectId>16407</ObjectId>
-      <ColNames>phrase
-id_per</ColNames>
+    <key id="19" parent="10" name="phrase_pkey">
+      <ObjectId>24620</ObjectId>
+      <ColNames>id_per</ColNames>
       <UnderlyingIndexName>phrase_pkey</UnderlyingIndexName>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="19" parent="10" name="phrase_id_per_fkey">
-      <ObjectId>16408</ObjectId>
+    <foreign-key id="20" parent="10" name="phrase_id_per_fkey">
+      <ObjectId>24621</ObjectId>
       <ColNames>id_per</ColNames>
-      <RefTableId>16393</RefTableId>
+      <RefTableId>24605</RefTableId>
       <RefColPositions>1</RefColPositions>
       <RefTableName>person</RefTableName>
       <RefKeyName>person_pkey</RefKeyName>

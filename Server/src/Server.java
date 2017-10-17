@@ -22,7 +22,6 @@ public class Server {
                 countClients++;
                 tfmc = new ThreadForManyClients(vectorServer, countClients, socket, listOfThreads, fdb);
                 listOfThreads.add(tfmc);
-                System.out.println(listOfThreads.size());
                 System.out.println("Клиент №" + countClients + " найден");
             }
         } catch (BindException e) {
@@ -49,6 +48,7 @@ public class Server {
         } catch (IOException e) {
             System.out.println("Ошибка закрытия серверских сокетов");
         }
+        System.out.println("Сервер завершил работу");
         System.exit(0);
     }
 }
